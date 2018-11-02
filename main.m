@@ -118,12 +118,11 @@ for k = 1:N % k-th meas
 end
 
 %% Write file
-filename1 = 'banana.xls';
 % some magics with matrixs
 A = [x_; U_G_; U_FS_; U_; u_];
 B = A'; 
 C = array2table(B,'VariableNames',{'x_', 'U_G_', 'U_FS_', 'U_', 'u_'}); % create table
-xlswrite(filename1,C);
+writetable(C,filename,'Sheet',5);
 
 %% plot Uncertainty bounds
 Nr=length (U_FS); % number og ranges
