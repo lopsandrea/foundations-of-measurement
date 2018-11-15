@@ -79,10 +79,11 @@ for i=1:length_x
         x_(end+1)=x_i;  %#ok<SAGROW>
     end
 end
+
+%% Read file
 filename = 'Spec_mul.xlsx';
 sheet = multimeter;
 
-%% Read file
 T = readtable(filename,'Sheet',sheet); % ALL spec data
 
 %% Specs table
@@ -95,7 +96,7 @@ U_G = Specs.U_G; % reading uncertainty coeffcient
 
 %% FS uncertainty calculation 
 if Specs.U_FS(1)<1
-     U_FS = FS.*Specs.U_FS/100;
+     U_FS = FS.*Specs.U_FS/100; % full scale uncertainty
 else
      U_FS = Specs.Q.*Specs.U_FS;
 end
@@ -121,9 +122,27 @@ end
 % some magics with matrixs
 A = [x_; U_G_; U_FS_; U_; u_];
 B = A'; 
-C = array2table(B,'VariableNames',{'x_', 'U_G_', 'U_FS_', 'U_', 'u_'}); % create table
+C = array2table(B,'VariableNames',{'x_', 'U_G_', 'U_FS_', 'U_', 'u_'}) % create table
 writetable(C,filename,'Sheet',5);
 
-%% plot Uncertainty bounds
-Nr=length (U_FS); % number og ranges
-x = NaN(1,Nr*2); % preallocation
+%% Plot Uncertainty bounds
+x = (0);
+for k = 1:size(FS)
+    x = [x(1:end) FS(k)];
+    x = [x(1:end) FS(k)];
+end %è 10
+x = x(1:end-1);
+
+Y_U_G_ = [];
+for k = 1:size(U_G)
+    Y_U_G_ = [Y_U_G_(1:end) U_G(k)];
+    Y_U_G_ = [Y_U_G_(1:end) U_G(k)];
+end
+
+Y_U_FS = [];
+for k = 1:size(U_FS)
+    Y_U_FS = [Y_U_FS(1:end) U_FS(k)];
+    Y_U_FS = [Y_U_FS(1:end) U_FS(k)];
+end
+y = Y_U_G_.*x+Y_U_FS;
+plot(x,y)
