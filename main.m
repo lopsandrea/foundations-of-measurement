@@ -1,9 +1,8 @@
-
-
-%% input parameter
+%% Input parameter (part1)
 clear
 clearvars
 clc
+
 disp('*********************************************************************************')
 disp('**** Welcome to the automatic uncertainty calculator for digital multimeters ****')
 disp('*********************************************************************************')
@@ -69,17 +68,6 @@ end
 disp(' ')
 disp(' ')
 
-length_x = input('How many measurements did you make?  ');
-x_=[]; % x_ = column vector of meas
-for i=1:length_x
-    x_i = input('Enter the measure: ');
-    if x_i==0
-        break
-    else
-        x_(end+1)=x_i;  %#ok<SAGROW>
-    end
-end
-
 %% Read file
 filename = 'Spec_mul.xlsx';
 sheet = multimeter;
@@ -90,9 +78,24 @@ T = readtable(filename,'Sheet',sheet); % ALL spec data
 rows = find(strcmp(T.meas_type, meas_type)); % selected rows
 Specs = T(rows,:);
 
-%% Specs arrays
-FS = Specs.range;
-U_G = Specs.U_G; % reading uncertainty coeffcient
+%% Specs arrays and data
+FS = Specs.range; % read fs value
+U_G = Specs.U_G; % read uncertainty coeffcient
+meas_recommended = num2str(length(FS));
+
+%% Input parameter (part2)
+
+txt_input = ['How many measurements did you make? (',meas_recommended,' Recommended): '];
+length_x = input(txt_input); % set number of meas
+x_=[]; % x_ = column vector of meas
+for i=1:length_x % fill the vector
+    x_i = input('Enter the measure: ');
+    if x_i==0
+        break
+    else
+        x_(end+1)=x_i;  %#ok<SAGROW>
+    end
+end 
 
 %% FS uncertainty calculation 
 if Specs.U_FS(1)<1
@@ -122,8 +125,9 @@ end
 % some magics with matrixs
 U_MX = [x_; U_G_; U_FS_; U_; u_]; % crate matrix of results
 U_T = U_MX'; % transposed matrix 
-Table = array2table(U_T,'VariableNames',{'x_', 'U_G_', 'U_FS_', 'U_', 'u_'}) % create table
-writetable(C,filename,'Sheet',5);
+Table = array2table(U_T,'VariableNames',{'x_', 'U_G_', 'U_FS_', 'U_', 'u_'});% create table
+Table; % print to disp the table
+writetable(Table,filename,'Sheet',5); % write!
 
 %% Plot Uncertainty bounds
 x = (0); % initialize vector x by entering 0
@@ -133,16 +137,27 @@ for k = 1:size(FS) % fill the vector with double FS values
 end 
 x = x(1:end-1); % shift the x vector of one to the right
 
-Y_U_G_ = [];
+Y_U_G_ = []; % initialize vector Y_U_G_
 for k = 1:size(U_G) % fill the vector with double U_G values
     Y_U_G_ = [Y_U_G_(1:end) U_G(k)];
     Y_U_G_ = [Y_U_G_(1:end) U_G(k)];
 end
 
-Y_U_FS = [];
+Y_U_FS = []; % initialize vector Y_U_FS
 for k = 1:size(U_FS) % fill the vector with double U_FS values
     Y_U_FS = [Y_U_FS(1:end) U_FS(k)];
     Y_U_FS = [Y_U_FS(1:end) U_FS(k)];
 end
-y = Y_U_G_.*x+Y_U_FS;
-plot(x,y)
+y = Y_U_G_.*x/100+Y_U_FS;
+
+% create the figure
+fig_title = 'Plot Uncertainty bounds of ' + multimeter;
+fig = figure;
+plot(x,y) % positive part
+hold on
+plot(x,-y) % negative part
+title(fig_title)
+hold off
+fig;
+% stamp the figure in a file
+print(fig,fig_title,'-dpng')
