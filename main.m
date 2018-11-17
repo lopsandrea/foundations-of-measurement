@@ -90,7 +90,7 @@ length_x = input(txt_input); % set number of meas
 x_=[]; % x_ = column vector of meas
 for i=1:length_x % fill the vector
     x_i = input('Enter the measure: ');
-    if x_i==0
+    if x_i==0 && x_i>FS(legth(FS)) % meas must be less than the maxium value of FS
         break
     else
         x_(end+1)=x_i;  %#ok<SAGROW>
@@ -126,29 +126,24 @@ end
 U_MX = [x_; U_G_; U_FS_; U_; u_]; % crate matrix of results
 U_T = U_MX'; % transposed matrix 
 Table = array2table(U_T,'VariableNames',{'x_', 'U_G_', 'U_FS_', 'U_', 'u_'});% create table
-Table; % print to disp the table
+disp(' ')
+disp(' ')
+disp('***************')
+disp('**** Table ****')
+disp('***************')
+disp(' ');
+disp(Table); % print to disp the table
 writetable(Table,filename,'Sheet',5); % write!
 
 %% Plot Uncertainty bounds
-x = (0); % initialize vector x by entering 0
-for k = 1:size(FS) % fill the vector with double FS values
-    x = [x(1:end) FS(k)];
-    x = [x(1:end) FS(k)];
-end 
-x = x(1:end-1); % shift the x vector of one to the right
+x = repelem([0;FS],2); % fill the vector with double FS values 
+x = x(2:end-1)'; % cut the x vector of one to the right and left
 
-Y_U_G_ = []; % initialize vector Y_U_G_
-for k = 1:size(U_G) % fill the vector with double U_G values
-    Y_U_G_ = [Y_U_G_(1:end) U_G(k)];
-    Y_U_G_ = [Y_U_G_(1:end) U_G(k)];
-end
+Y_U_G_ = repelem(U_G,2)'; % fill the vector with double U_G values
 
-Y_U_FS = []; % initialize vector Y_U_FS
-for k = 1:size(U_FS) % fill the vector with double U_FS values
-    Y_U_FS = [Y_U_FS(1:end) U_FS(k)];
-    Y_U_FS = [Y_U_FS(1:end) U_FS(k)];
-end
-y = Y_U_G_.*x/100+Y_U_FS;
+Y_U_FS = repelem(U_FS,2)'; % fill the vector with double U_FS values
+
+y = Y_U_G_.*x/100+Y_U_FS; % calc uncertainty
 
 % create the figure
 fig_title = 'Plot Uncertainty bounds of ' + multimeter;
