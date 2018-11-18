@@ -1,0 +1,60 @@
+\documentclass[a4paper]{article}
+
+\title{\textbf{Calcolatore di incertezza per multimetri digitali}\\ {\normalsize - Esercitazione 1 -}}
+\author{Andrea Lops\\
+		Paolo Rotolo\\
+		Laura Loperfido\\
+		Teresa Pantone}
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Flow dello script}
+
+Lo script è composto da 5 sezioni:\begin{itemize}
+  \item Selezione del multimetro, con relativo input delle misure
+  \item Lettura da file delle specifiche del multimetro
+  \item Calcolo delle incertezze
+  \item Scrittura dei risultati su file
+  \item Grafico dell'incertezza complessiva al variare dell’ingresso per le portate.
+
+\end{itemize}
+
+All'interno dello script sono state calcolate le 4 incertezze \emph{richieste}:\\ 
+
+\noindent 
+Incertezza di guadagno:
+\begin{Large}
+	\begin{equation} U_{G_x} = u_{G_x} \%|y|  \end{equation}
+\end{Large}\\
+Incertezza di fondo scala (portata):
+\begin{Large}
+	\begin{equation}
+  		U_{FS_x}=\left\{
+    		\begin{array}{@{} l c @{}}
+      			N \cdot Q  \\
+      			u_{FS_x} \%|X_{FS}| & con \ u_{FS_x}<1
+    \end{array}\right.
+  \label{eq4}
+\end{equation}
+\end{Large}\\
+Incertezza assoluta:
+\begin{Large}
+	\begin{equation} U_x = U_{G_x} + U_{FS_x}  \end{equation}
+\end{Large}\\
+Incertezza relativa:
+\begin{Large}
+	\begin{equation} u_x = \frac {U_x} {|y|}  \end{equation}
+\end{Large}
+
+
+
+\section{Particolari accorgimenti}
+
+Durante la stesura dello script abbiamo notato diverse situazioni critiche che abbiamo contenuto con particolari accorgimenti. Effettuando una serie di test ci siamo resi conto che lo script iniziale non contemplava la gestione de
+
+\section{One more thing}
+If you are wondering where your old default text is; it has been stored as a template. The template menu can be used to access and restore it.
+
+\end{document}

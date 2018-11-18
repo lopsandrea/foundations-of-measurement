@@ -90,8 +90,9 @@ length_x = input(txt_input); % set number of meas
 x_=[]; % x_ = column vector of meas
 for i=1:length_x % fill the vector
     x_i = input('Enter the measure: ');
-    if x_i==0 && x_i>FS(legth(FS)) % meas must be less than the maxium value of FS
-        break
+    last_FS = FS(length(FS));
+    if  x_i>last_FS % meas must be less than the maxium value of FS
+        disp('The inserted meas is bigger than the value of the last FS, insert a coherent meas')
     else
         x_(end+1)=x_i;  %#ok<SAGROW>
     end
