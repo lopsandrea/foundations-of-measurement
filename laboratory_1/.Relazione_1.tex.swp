@@ -78,11 +78,46 @@ Il numero di divisioni è 10, quindi:
 Quindi si ricava l'incertezza:
 \begin{Large}
 	\begin{equation}
-  		{t_r}= 5.5(\pm 0,00055 rdg \pm0,04 FSO)\mu s \pm200ps
+  		{t_r}= 5.5(\pm 0,00055 rdg \pm0,04 FSO)\mu s \pm200ps %TODO arrotondare
 	\end{equation}
 \end{Large}\\
 \subsubsection{Tempo di discesa con sonda non compensata}
-\subsection{Capacità sistema sonda non compensata}
+\begin{Large}
+	\begin{equation}
+  		{t_f}= 5.7(\pm 0,00057 rdg \pm0,04 FSO)\mu s \pm200ps %TODO arrotondare
+	\end{equation}
+\end{Large}\\
+\subsubsection{Tempo di salita con sonda compensata 10x}
+\begin{Large}
+	\begin{equation}
+  		{t_{r_{10x}}}= 975(\pm 0,0975 rdg \pm10 FSO)ns \pm200ps %TODO arrotondare
+	\end{equation}
+\end{Large}\\
+\subsubsection{Tempo di salita con sonda non compensata e inserzione di una resistenza}
+\begin{Large}
+	\begin{equation}
+  		t_{r_R}= 7.1(\pm 0,00071 rdg \pm0.04 FSO)\mu s \pm200ps %TODO arrotondare
+	\end{equation}
+\end{Large}\\
+\subsubsection{Tempo di salita con sonda compensata 10x e inserzione di una resistenza}
+\begin{Large}
+	\begin{equation}
+  		{t_{r_{R_{10x}}}}= 1.3(\pm 0,00013 rdg \pm10 FSO)\mu s \pm200ps %TODO arrotondare
+	\end{equation}
+\end{Large}\\
+\subsubsection{Periodo segnale sinusoidale}
+\begin{Large}
+	\begin{equation}
+  		{T_s}= 1(\pm 0,001 rdg \pm4 FSO)ns \pm200ps
+	\end{equation}
+\end{Large}\\
+\subsubsection{Frequenza segnale sinusoidale}
+\begin{Large}
+	\begin{equation}
+  		{f_s}= 1(\pm 0,001 rdg \pm4 FSO)ns \pm200ps %TODO SU QUESTO SONO MOLTO "INCERTO"
+	\end{equation}
+\end{Large}\\
+\subsection{Capacità sistema sonda non compensata e oscilloscopio}
 Diversamente dalle altre misure, il calcolo della capacità è una misura indiretta, essendo: 
 \begin{Large}
 	\begin{equation}
@@ -101,7 +136,14 @@ Quindi:
   		C= \frac{7.1}{9.9*ln(9)} [\frac{\mu s}{k\Omega}]= 0.325nF
 	\end{equation}
 \end{Large}\\
+\subsubsection{Capacità sistema sonda non compensata 10x e oscilloscopio }
+Si evita la rindondanza dei calcoli presenti precedentemente e si provvede ad eseguire il calcolo
+\begin{Large}
+	\begin{equation}
+  		C_{10x}= \frac{1.3}{9.9*ln(9)} [\frac{\mu s}{k\Omega}]= 0.059nF
+	\end{equation}
+\end{Large}\\
 
-\subsection{Tensione picco-picco segnale sinusoidale}
+\subsection{Tensione picco-picco segnale sinusoidale} %TODO MOLTO GROSSO
 
 \end{document}
