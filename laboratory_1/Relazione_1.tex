@@ -1,11 +1,20 @@
 \documentclass[a4paper]{article}
-\title{\textbf{Relazione attività di laboratorio}\\ {\normalsize - Esercitazione 1 -}}
+
+\title{
+		textbf{Relazione attività di laboratorio}\\
+		{\normalsize - Esercitazione 1 -}
+	  }
+
 \author{Andrea Lops\\
 		Paolo Rotolo\\
 		Laura Loperfido\\
-		Teresa Pantone}
+		Teresa Pantone
+	   }
+		
 \date{29/11/2018}
+
 \usepackage{graphicx}
+
 \begin{document}
 
 \maketitle
@@ -14,34 +23,37 @@
 
 Per poter calcolare le incertezze richieste abbiamo usato le seguenti \emph{formule}:\\ 
 
-
 \subsection {Incertezza sulla resistenza \emph{R}}
 
 In primo luogo, è stata effettuata la misura della resistenza tramite il multimetro \emph{Agilent 34401}:
 
 \begin{figure}[htp]
-\centering
-\includegraphics[scale=0.20]{"figure1".jpg}
-\caption{Multimetro in misura}
-\label{}
+	\centering
+	\includegraphics[scale=0.20]{"figure1".jpg}
+	\caption{Multimetro in misura}
+	\label{}
 \end{figure}
 \noindent 
 Per il calcolo dell'incertezza relativa alla resistenza si consulta la seguente tabella (\emph{Figure 2}) delle specifiche relative al multimetro \emph{Agilent 34401}:
 \begin{center}
-\begin{figure}[htp]
-\centering
-\includegraphics[scale=0.50]{"figure2".png}
-\caption{Tabella di accuratezza del multimetro}
-\label{a}
-\end{figure}
+	\begin{figure}[htp]
+		\centering
+		\includegraphics[scale=0.50]{"figure2".png}
+		\caption{Tabella di accuratezza del multimetro}
+		\label{a}
+	\end{figure}
 \end{center}
 
 Il valore della resistenza letto sul multimetro è  9.9 k$\Omega$. Si sceglie il range appropriato per la misura (10 kOhm) e si leggono i valori di incertezza di lettura e di fondo scala.
 
 \begin{Large} 
-	\begin{equation} U_{R} = [\pm 0.010\%rdg \pm 0.001\% FSO]
+	\begin{equation} 
+		U_{R} = [\pm 0.010\%rdg \pm 0.001\% FSO]
 	 \end{equation}
-	 \begin{eqnarray*} R = 9.9 \pm 0.0010 k\Omega \end{eqnarray*}
+	 
+	 \begin{eqnarray*} 
+	 	R = 9.9 \pm 0.0010 k\Omega 
+	 \end{eqnarray*}
 \end{Large}
 
 \subsection {Incertezza sui tempi}
@@ -49,22 +61,24 @@ Il valore della resistenza letto sul multimetro è  9.9 k$\Omega$. Si sceglie il
 Per calcolare l'incertezza sulle misure è necessario conoscere le specifiche di performance dell'\emph{Oscilloscopio HP54603B}. Si prende come riferimento il sistema orizzontale, ovvero quello riferito al tempo, avendo appurato che tali misure si riferiscano ad esso.
 
 \begin{figure}[htp]
-\centering
-\includegraphics[scale=0.20]{"figure3".jpg}
-\caption{Oscilloscopio}
-\label{}
+	\centering
+	\includegraphics[scale=0.20]{"figure3".jpg}
+	\caption{Oscilloscopio}
+	\label{}
 \end{figure}
-
 
 Di seguito sono riportati i calcoli relativi all'incertezza che verranno illustrati solo per la prima misura in quanto sono gli stessi che verranno utilizzati per le misure successive.
 
 \subsubsection{Tempo di salita con sonda non compensata}
+
 Per calcolare l'incertezza si utilizza la seguente formula, presente nel datasheet dell'oscilloscopio:
+
 \begin{Large}
 	\begin{equation}
   		U_{t}=[\pm 0.01\%rdg\pm 0.2FSO \pm 200ps]
 	\end{equation}
 \end{Large}\\
+
 Si noti che per poter calcolare l'incertezza si necessita del valore di fondo scala ottenuto moltiplicando l'impostazione di guadagno per il numero di divisioni.
 
 Nel caso del tempo di salita con la sonda non compensata, l'impostazione di guadagno verticale/base dei tempi è 10.0V/2.0$\mu$s.
@@ -81,42 +95,49 @@ Quindi si ricava l'incertezza:
   		{t_r}= 5.5(\pm 0,00055 rdg \pm0,04 FSO)\mu s \pm200ps %TODO arrotondare
 	\end{equation}
 \end{Large}\\
+
 \subsubsection{Tempo di discesa con sonda non compensata}
 \begin{Large}
 	\begin{equation}
   		{t_f}= 5.7(\pm 0,00057 rdg \pm0,04 FSO)\mu s \pm200ps %TODO arrotondare
 	\end{equation}
 \end{Large}\\
+
 \subsubsection{Tempo di salita con sonda compensata 10x}
 \begin{Large}
 	\begin{equation}
   		{t_{r_{10x}}}= 975(\pm 0,0975 rdg \pm10 FSO)ns \pm200ps %TODO arrotondare
 	\end{equation}
 \end{Large}\\
+
 \subsubsection{Tempo di salita con sonda non compensata e inserzione di una resistenza}
 \begin{Large}
 	\begin{equation}
   		t_{r_R}= 7.1(\pm 0,00071 rdg \pm0.04 FSO)\mu s \pm200ps %TODO arrotondare
 	\end{equation}
 \end{Large}\\
+
 \subsubsection{Tempo di salita con sonda compensata 10x e inserzione di una resistenza}
 \begin{Large}
 	\begin{equation}
   		{t_{r_{R_{10x}}}}= 1.3(\pm 0,00013 rdg \pm10 FSO)\mu s \pm200ps %TODO arrotondare
 	\end{equation}
 \end{Large}\\
+
 \subsubsection{Periodo segnale sinusoidale}
 \begin{Large}
 	\begin{equation}
   		{T_s}= 1(\pm 0,001 rdg \pm4 FSO)ns \pm200ps
 	\end{equation}
 \end{Large}\\
+
 \subsubsection{Frequenza segnale sinusoidale}
 \begin{Large}
 	\begin{equation}
   		{f_s}= 1(\pm 0,001 rdg \pm4 FSO)ns \pm200ps %TODO SU QUESTO SONO MOLTO "INCERTO"
 	\end{equation}
 \end{Large}\\
+
 \subsection{Capacità sistema sonda non compensata e oscilloscopio}
 Diversamente dalle altre misure, il calcolo della capacità è una misura indiretta, essendo: 
 \begin{Large}
@@ -124,18 +145,21 @@ Diversamente dalle altre misure, il calcolo della capacità è una misura indire
   		C= \frac{t_{r_R}}{R*ln(9)}
 	\end{equation}
 \end{Large}\\
+
 In questo caso quindi l'incertezza si ricava sommando le incertezze relative delle misure dirette che la compongono il rapporto 
 \begin{Large}
 	\begin{equation}
   		\frac{U_x}{|y|}= \frac{U_{x_1}}{|y_1|}+\frac{U_{x_2}}{|y_2|}=u_{x_1}+u_{x_2}=u_x
 	\end{equation}
 \end{Large}\\
+
 Quindi:
 \begin{Large}
 	\begin{equation}
   		C= \frac{7.1}{9.9*ln(9)} [\frac{\mu s}{k\Omega}]= 0.325nF
 	\end{equation}
 \end{Large}\\
+
 \subsubsection{Capacità sistema sonda non compensata 10x e oscilloscopio }
 Si evita la rindondanza dei calcoli presenti precedentemente e si provvede ad eseguire il calcolo
 \begin{Large}
