@@ -1,10 +1,6 @@
 \documentclass[a4paper]{article}
 
-\title{
-		textbf{Relazione attività di laboratorio}\\
-		{\normalsize - Esercitazione 1 -}
-	  }
-
+\title{\textbf{Relazione attività di laboratorio}\\{\normalsize - Esercitazione 1 -}}
 \author{Andrea Lops\\
 		Paolo Rotolo\\
 		Laura Loperfido\\
@@ -21,8 +17,7 @@
 
 \section{Calcoli}
 
-Per poter calcolare le incertezze richieste abbiamo usato le seguenti \emph{formule}:\\ 
-
+Per poter calcolare le incertezze richieste abbiamo usato le seguenti \emph{formule}:\\
 \subsection {Incertezza sulla resistenza \emph{R}}
 
 In primo luogo, è stata effettuata la misura della resistenza tramite il multimetro \emph{Agilent 34401}:
@@ -75,7 +70,7 @@ Per calcolare l'incertezza si utilizza la seguente formula, presente nel datashe
 
 \begin{Large}
 	\begin{equation}
-  		U_{t}=[\pm 0.01\%rdg\pm 0.2FSO \pm 200ps]
+  		U_{t}=[\pm 0.01\%rdg\pm 0.2\%FSO \pm 200ps]
 	\end{equation}
 \end{Large}\\
 
@@ -92,21 +87,43 @@ Il numero di divisioni è 10, quindi:
 Quindi si ricava l'incertezza:
 \begin{Large}
 	\begin{equation}
-  		{t_r}= 5.5(\pm 0,00055 rdg \pm0,04 FSO)\mu s \pm200ps %TODO arrotondare
+  		{t_r}= 5.5\mu s \pm 0,00055\mu s \pm0,04\mu s \pm200ps %TODO arrotondare
 	\end{equation}
 \end{Large}\\
-
+Per rendere più elegante la scrittura del risultato senza intaccarne la validità, si decide di approssimarlo alla terza cifra decimale.
+\begin{Large}
+	\begin{equation}
+  		{t_r}= 5.5\pm 0,041 \mu s
+	\end{equation}
+\end{Large}\\
 \subsubsection{Tempo di discesa con sonda non compensata}
 \begin{Large}
 	\begin{equation}
-  		{t_f}= 5.7(\pm 0,00057 rdg \pm0,04 FSO)\mu s \pm200ps %TODO arrotondare
+  		{t_f}= 5.7\mu s \pm 0,00057\mu s \pm0,04\mu s \pm200ps
+	\end{equation}
+\end{Large}\\
+
+Arrotondando: 
+
+\begin{Large}
+	\begin{equation}
+  		{t_f}= 5.7\pm 0,041 \mu s
 	\end{equation}
 \end{Large}\\
 
 \subsubsection{Tempo di salita con sonda compensata 10x}
+
 \begin{Large}
 	\begin{equation}
-  		{t_{r_{10x}}}= 975(\pm 0,0975 rdg \pm10 FSO)ns \pm200ps %TODO arrotondare
+		{t_{r_{10x}}}= 975ns \pm 0,0975ns \pm10ns \pm200ps
+	\end{equation}
+\end{Large}\\
+
+Arrotondando: 
+
+\begin{Large}
+	\begin{equation}
+		{t_{r_{10x}}}= 975\pm 10,098 ns
 	\end{equation}
 \end{Large}\\
 
@@ -120,7 +137,7 @@ Quindi si ricava l'incertezza:
 \subsubsection{Tempo di salita con sonda compensata 10x e inserzione di una resistenza}
 \begin{Large}
 	\begin{equation}
-  		{t_{r_{R_{10x}}}}= 1.3(\pm 0,00013 rdg \pm10 FSO)\mu s \pm200ps %TODO arrotondare
+  		{t_{r_{R_{10x}}}}= 1300(\pm 0,13 rdg \pm10 FSO)ns \pm200ps %TODO arrotondare
 	\end{equation}
 \end{Large}\\
 
@@ -134,7 +151,7 @@ Quindi si ricava l'incertezza:
 \subsubsection{Frequenza segnale sinusoidale}
 \begin{Large}
 	\begin{equation}
-  		{f_s}= 1(\pm 0,001 rdg \pm4 FSO)ns \pm200ps %TODO SU QUESTO SONO MOLTO "INCERTO"
+  		{f_s}= 1000(\pm 0,1 rdg \pm4 FSO)\mu s \pm200ps %TODO SU QUESTO SONO MOLTO "INCERTO"
 	\end{equation}
 \end{Large}\\
 
@@ -169,5 +186,6 @@ Si evita la rindondanza dei calcoli presenti precedentemente e si provvede ad es
 \end{Large}\\
 
 \subsection{Tensione picco-picco segnale sinusoidale} %TODO MOLTO GROSSO
+
 
 \end{document}
