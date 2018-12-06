@@ -162,18 +162,43 @@ Arrotondando:
 \subsubsection{Periodo segnale sinusoidale}
 \begin{Large}
 	\begin{equation}
-  		{T_s}= 1(\pm 0,001 rdg \pm4 FSO)ns \pm200ps
+  		{T_s}= 1000\mu s\pm 0.1 \mu s \pm4 \mu s \pm200ps
 	\end{equation}
 \end{Large}\\
+\\
+\\
+\\
 
-\subsubsection{Frequenza segnale sinusoidale}
+Arrotondando: 
+
 \begin{Large}
 	\begin{equation}
-  		{f_s}= 1000(\pm 0,1 rdg \pm4 FSO)\mu s \pm200ps %TODO SU QUESTO SONO MOLTO "INCERTO"
+		{T_s}= 1000 \pm 4.1\mu s 
 	\end{equation}
 \end{Large}\\
 
-\subsection{Capacità sistema sonda non compensata e oscilloscopio}
+
+\subsubsection{Frequenza segnale sinusoidale}
+Essendo una misura indiretta useremo la seguente formula:
+
+\begin{Large}
+	\begin{equation}
+		{U_{f_s}}= |\frac{d\frac{1}{T_s}}{d{T_s}}|U_{{T_s}}
+	\end{equation}
+\end{Large}\\
+Quindi l'incertezza:
+\begin{Large}
+	\begin{equation}
+		{U_{f_s}}= \frac{1}{1000000}*4.1=4.1 Hz
+	\end{equation}
+\end{Large}\\
+\begin{Large}
+	\begin{equation}
+  		{f_s}= 1000\pm 4.1Hz
+	\end{equation}
+\end{Large}\\
+
+\subsection{Capacità sistema sonda non compensata, resistenza e oscilloscopio}
 Diversamente dalle altre misure, il calcolo della capacità è una misura indiretta, essendo: 
 \begin{Large}
 	\begin{equation}
@@ -188,32 +213,53 @@ Quindi:
 	\end{equation}
 \end{Large}\\
 
-In questo caso quindi l'incertezza si ricava sommando le incertezze relative delle misure dirette che la compongono il rapporto 
+In questo caso quindi l'incertezza si ricava usando la seguente formula: 
 \begin{Large}
 	\begin{equation}
-  		\frac{U_x}{|y|}= \frac{U_{x_1}}{|y_1|}+\frac{U_{x_2}}{|y_2|}=u_{x_1}+u_{x_2}=u_x
+		U_{tot}=\sum_{i=1}^{N}|{\frac{df}{dy_i}}| U_i
 	\end{equation}
 \end{Large}\\
 
 Quindi l'incertezza:
 \begin{Large}
 	\begin{equation}
-		{U_C}= (0,041+0.001 )[\frac{\mu s}{k\Omega}]= 0.42nF
+		{U_C}= \frac{d\frac{t_{r_R}}{R*ln(9)}}{dt_{r_R}}U_{t_{r_R}}+\frac{d\frac{t_{r_R}}{R*ln(9)}}{dR}U_{R}
+	\end{equation}
+\end{Large}\\
+
+Quindi:
+\begin{Large}
+	\begin{equation}
+		{U_C}= 0.046*0.041+\frac{3.227}{9.9^2}*0.001=0.002 nF
 	\end{equation}
 \end{Large}\\
 
 In conclusione: 
 \begin{Large}
 	\begin{equation}
-		C=0.325\pm 0.42nF
+		C=0.325\pm 0.002nF
 	\end{equation}
 \end{Large}\\
 
-\subsubsection{Capacità sistema sonda non compensata 10x e oscilloscopio }
+\subsubsection{Capacità sistema sonda compensata 10x, resistenza e oscilloscopio }
 Si evita la rindondanza dei calcoli presenti precedentemente e si provvede ad eseguire il calcolo
 \begin{Large}
 	\begin{equation}
   		C_{10x}= \frac{1300}{9.9*ln(9)} [\frac{ns}{k\Omega}]= 59.688pF
+	\end{equation}
+\end{Large}\\
+
+Quindi l'incertezza:
+\begin{Large}
+	\begin{equation}
+		{U_{C_{10x}}}= 0.046*10.13+\frac{590.909}{9.9^2}*0.001=0.472 pF
+	\end{equation}
+\end{Large}\\
+
+Quindi in conclusione:
+\begin{Large}
+	\begin{equation}
+		{C_{10x}}= 59.688 \pm0.472 pF
 	\end{equation}
 \end{Large}\\
 
@@ -224,4 +270,19 @@ Per quanto riguarda la misura della tensione picco-picco del segnale sinusoidale
 		U_{V_{p-p_{s}}}= [\pm 2.4\% rdg\pm 0.4\%]
 	\end{equation}
 \end{Large}\\
+
+Quindi: 
+\begin{Large}
+	\begin{equation}
+		V_{p-p_{s}}= 3.938V\pm 0.0945V\pm 0.032V
+	\end{equation}
+\end{Large}\\
+
+Arrotondando:
+\begin{Large}
+	\begin{equation}
+		V_{p-p_{s}}= 3.938\pm 0.127V
+\end{equation}
+\end{Large}\\
+
 \end{document}
