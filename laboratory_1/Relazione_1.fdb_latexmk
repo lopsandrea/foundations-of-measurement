@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1544095325 "/home/alops/Desktop/foundations-of-measurement/laboratory_1/Relazione_1.tex" "Relazione_1.pdf" "Relazione_1" 1544095325
-  "/home/alops/Desktop/foundations-of-measurement/laboratory_1/Relazione_1.tex" 1544095324 5577 830e99580a452c168d23afeb21675278 ""
+["pdflatex"] 1544097392 "/home/alops/Desktop/foundations-of-measurement/laboratory_1/Relazione_1.tex" "Relazione_1.pdf" "Relazione_1" 1544097393
+  "/home/alops/Desktop/foundations-of-measurement/laboratory_1/Relazione_1.tex" 1544097392 6247 b313347baee7aa4d8e4b33bf221579a5 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1543696176 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1543696176 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1543696176 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -26,6 +26,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1543696176 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1543696176 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1543696176 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1543696176 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1543696176 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1543696176 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty" 1543696176 7612 729a8cc22a1ee0029997c7f74717ae05 ""
@@ -51,12 +52,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1543696176 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1543788982 334148 1b9d30ff8c861d6082e3e9bfccd8d7eb ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1543788965 7910428 e6753b0ffdc9090e88c2dcc5c4526ee2 ""
-  "Relazione_1.aux" 1544095325 1829 d6beeca798742c29065a4aa96367e2a3 ""
-  "Relazione_1.tex" 1544095324 5577 830e99580a452c168d23afeb21675278 ""
+  "Relazione_1.aux" 1544097393 1829 e0044f770f4b52d3f724c1714085e608 ""
+  "Relazione_1.tex" 1544097392 6247 b313347baee7aa4d8e4b33bf221579a5 ""
   "figure1.jpg" 1544018925 178244 8b26e3c4ff68671fc1f0de92a70534d3 ""
   "figure2.png" 1544017693 82476 aa17774b94e4703fe4e28a0330a9d87f ""
   "figure3.jpg" 1544021893 132461 d782700c630078067d21e07560e98df9 ""
   (generated)
+  "Relazione_1.aux"
   "Relazione_1.pdf"
   "Relazione_1.log"
-  "Relazione_1.aux"
