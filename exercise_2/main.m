@@ -1,8 +1,19 @@
 function main
+clc;
+clear;
 
 file1 = 'Dati_1.txt';
 
-interquartile(file1);
+OUTLIERS = outliers(file1);
+
+if (isempty(OUTLIERS))
+    disp('Non ci sono outliers');            
+else
+    disp(OUTLIERS);
+end
+
+dispBoxplot(file1);
+
 
     function v = parseFile(filename)
         data = importdata(filename,' ');
@@ -16,23 +27,19 @@ interquartile(file1);
 
     function mediana(filename)
          v = num2str(median(parseFile(filename)));
-         disp(['La mediana è ', v]);
     end
 
     function output = dispersione(filename)
         output = range(parseFile(filename));
-        disp(['La dispersione è ' num2str(range(parseFile(filename)))]);
     end
 
     function output = firstQuartile(filename)
         y = parseFile(filename);
         output = median(y(y<median(y)));
-        disp(['Il primo quartile è ' num2str(output)]);
     end
     
     function secondQuartile(filename)
         output = median(parseFile(filename));
-        disp(['Il secondo quartile è ' num2str(output)]);
     end
 
     function output = thirdQuartile(filename)
@@ -40,8 +47,35 @@ interquartile(file1);
         output = median(y(find(y>median(y))));
     end
 
-    function interquartile(filename)
-       interquartile = thirdQuartile(filename) - firstQuartile(filename);
-       disp(['Lo scarto è ' num2str(interquartile)]);
+    function output = interquartile(filename)
+       output = (thirdQuartile(filename) - firstQuartile(filename));
+    end
+
+    function totOutliers = outliers(filename)
+        v = parseFile(filename);
+        IQR = interquartile(filename);
+        Q(1) = firstQuartile(filename);
+        
+        iy = find(v<Q(1)-3*IQR);
+        if (isempty(iy))
+            outliersQ1 = v(iy);
+        else
+            outliersQ1 = [];
+        end
+        
+        % determine extreme Q3 outliers (e.g., x > Q1 + 3*IQR)
+        iy = find(v>Q(1)+3*IQR);
+        if (isempty(iy))
+            outliersQ3 = v(iy);
+        else
+            outliersQ3 = [];
+        end
+        
+        totOutliers = [outliersQ1 outliersQ3];
+    end
+
+    function dispBoxplot(filename)
+        boxplot(parseFile(filename));
+        figure;
     end
 end
