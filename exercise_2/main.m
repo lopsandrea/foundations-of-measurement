@@ -1,8 +1,8 @@
 function main
 
+bar(parseFile('Dati_1.txt'));
 
     function v = parseFile(filename)
-        file = fopen(filename,'r');
-        
+        v = importdata(filename,'%s');
     end
 end
