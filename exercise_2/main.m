@@ -12,7 +12,7 @@ else
     disp(OUTLIERS);
 end
 
-dispBoxplot(file1);
+dispQQPlot(file1);
 
 
     function v = parseFile(filename)
@@ -75,7 +75,16 @@ dispBoxplot(file1);
     end
 
     function dispBoxplot(filename)
-        boxplot(parseFile(filename));
         figure;
+        boxplot(parseFile(filename));
+    end
+
+    function dispQQPlot(filename)
+        figure;
+       qqplot(parseFile(filename)); 
+    end
+
+    function chiSquareTest(filename)
+        
     end
 end
