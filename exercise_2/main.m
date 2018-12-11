@@ -23,8 +23,24 @@ eseguiEsercizio(file1);
         disp(strcat(['Il secondo quartile è ' num2str(secondQuartile(v))]));
         disp(strcat(['Il terzo quartile è ' num2str(thirdQuartile(v))]));
        
-        % calcola interquartile e outliers
-
+        % calcola interquartile
+        disp(strcat(["L'interquartile è " num2str(interquartile(v))]));
+        
+        % calcola outliers
+        OUTLIERS = outliers(v);
+        if (isempty(OUTLIERS))
+            disp('Non ci sono outliers');
+        else
+            disp('Gli outliers sono:');
+            disp(OUTLIERS);
+        end
+        
+        % mostra boxplot
+        % apre nuova finestra per il grafico con figure;
+        figure;
+        dispBoxplot(y)
+        
+        
         
     end
 
@@ -137,7 +153,7 @@ disp(['La varianza è: ' num2str(varianza(file1))]);
     end
 
     function output = distribuzioneGaussiana()
-       output = randn(1, 5000) 
+       output = randn(1, 5000); 
     end
 
 end
