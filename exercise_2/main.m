@@ -4,6 +4,30 @@ clear;
 
 file1 = 'Dati_1.txt';
 
+eseguiEsercizio(file1);
+
+    function eseguiEsercizio(filename)
+        v = parseFile(filename);
+        
+        % mostra istogramma
+        istogramma(v);
+        
+        % calcola mediana e disperzione
+        disp(strcat(['La mediana è ' num2str(mediana(v))]));
+        
+        % installa toolbox per questo
+        % disp(strcat(['La dispersione è ' num2str(dispersione(v))]));
+        
+        % calcola quartili
+        disp(strcat(['Il primo quartile è ' num2str(firstQuartile(v))]));
+        disp(strcat(['Il secondo quartile è ' num2str(secondQuartile(v))]));
+        disp(strcat(['Il terzo quartile è ' num2str(thirdQuartile(v))]));
+       
+        % calcola interquartile e outliers
+
+        
+    end
+
 OUTLIERS = outliers(file1);
 
 if (isempty(OUTLIERS))
@@ -12,49 +36,60 @@ else
     disp(OUTLIERS);
 end
 
-dispQQPlot(file1);
+%  CHISQUARETEST = chiSquareTest(file1);
+%  if (CHIQUARETEST < 0.5)
+%      disp('La curva potrebbe essere una gaussiana');
+%  else
+%      disp('La curva non è una gaussiana');
+%  end
 
+
+% variance
+disp(['La varianza è: ' num2str(varianza(file1))]);
+
+% genrate uniform distribution
+%distribuzioneUniforme();
+
+% genera distribuzione gaussiana
+%distribuzioneGaussiana();
 
     function v = parseFile(filename)
         data = importdata(filename,' ');
         v = sort(data);
     end
 
-    function v = istogramma(filename)
+    function v = istogramma(v)
         % calcola il passo qui
-        v = histogram(parseFile(filename));
+        v = histogram(v);
     end
 
-    function mediana(filename)
-         v = num2str(median(parseFile(filename)));
+    function output = mediana(v)
+         output = median(v);
     end
 
-    function output = dispersione(filename)
-        output = range(parseFile(filename));
+    function output = dispersione(v)
+        output = range(v);
     end
 
-    function output = firstQuartile(filename)
-        y = parseFile(filename);
-        output = median(y(y<median(y)));
+    function output = firstQuartile(v)
+        output = median(v(v<median(v)));
     end
     
-    function secondQuartile(filename)
-        output = median(parseFile(filename));
+    function output = secondQuartile(v)
+        output = median(v);
     end
 
-    function output = thirdQuartile(filename)
-        y = parseFile(filename);
-        output = median(y(find(y>median(y))));
+    function output = thirdQuartile(v)
+        output = median(v(find(v>median(v))));
     end
 
-    function output = interquartile(filename)
-       output = (thirdQuartile(filename) - firstQuartile(filename));
+    function output = interquartile(v)
+       output = (thirdQuartile(v) - firstQuartile(v));
     end
 
-    function totOutliers = outliers(filename)
-        v = parseFile(filename);
-        IQR = interquartile(filename);
-        Q(1) = firstQuartile(filename);
+    function totOutliers = outliers(v)
+        IQR = interquartile(v);
+        Q(1) = firstQuartile(v);
         
         iy = find(v<Q(1)-3*IQR);
         if (isempty(iy))
@@ -74,17 +109,35 @@ dispQQPlot(file1);
         totOutliers = [outliersQ1 outliersQ3];
     end
 
-    function dispBoxplot(filename)
+    function dispBoxplot(v)
         figure;
-        boxplot(parseFile(filename));
+        boxplot(filename);
     end
 
-    function dispQQPlot(filename)
+    function dispQQPlot(v)
         figure;
-       qqplot(parseFile(filename)); 
+       qqplot(filename); 
     end
 
-    function chiSquareTest(filename)
-        
+    function output = chiSquareTest(v)
+        % 0 può essere gaussiana, 1 non lo è
+        output = chi2gof(v);
     end
+
+    function output = varianza(v)
+       output = var(v); 
+    end
+
+    function output = media(v)
+       output = mean(v); 
+    end
+
+    function output = distribuzioneUniforme()
+        output = rand(1, 5000);
+    end
+
+    function output = distribuzioneGaussiana()
+       output = randn(1, 5000) 
+    end
+
 end
