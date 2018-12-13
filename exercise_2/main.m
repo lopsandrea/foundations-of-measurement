@@ -65,8 +65,8 @@ disp(' ')
         
         % calcola quartili
         disp(strcat(['The first quartile is ' num2str(firstQuartile(v))]));
-        disp(strcat(['The second quartile is' num2str(secondQuartile(v))]));
-        disp(strcat(['The third quartile is' num2str(thirdQuartile(v))]));
+        disp(strcat(['The second quartile is ' num2str(secondQuartile(v))]));
+        disp(strcat(['The third quartile is ' num2str(thirdQuartile(v))]));
        
         % calcola interquartile
         disp(strcat(['The interquartile is ' num2str(interquartile(v))]));
@@ -74,18 +74,14 @@ disp(' ')
         % calcola outliers
         OUTLIERS = outliers(v);
         if (isempty(OUTLIERS))
-            disp('Non ci sono outliers');
+            disp('There are no outliers');
         else
-            disp('Gli outliers sono:');
-            disp(OUTLIERS);
+            disp(strcat(['The outliers are ' num2str(OUTLIERS)]));
         end
         
         % mostra boxplot
         % apre nuova finestra per il grafico con figure;
-        figure;
         dispBoxplot(v);
-        hold off;
-        
         
     end
 
@@ -147,7 +143,7 @@ disp(' ')
     end
 
     function nOutliers = outliers(v)
-        nOutliers = firstQuartile(v) + (1.5*interquartile(v));
+        nOutliers = thirdQuartile(v) + (1.5*interquartile(v));
     end
 
     function dispBoxplot(v)
