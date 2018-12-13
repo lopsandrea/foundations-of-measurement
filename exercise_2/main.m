@@ -61,7 +61,7 @@ disp(' ')
         
         % calcola mediana e disperzione
         disp(strcat(['The median is ' num2str(mediana(v))]));
-        disp(strcat(['The dispersion is ' num2str(dispersione(v))]));
+        %disp(strcat(['The dispersion is ' num2str(dispersione(v))]));
         
         % calcola quartili
         disp(strcat(['The first quartile is ' num2str(firstQuartile(v))]));
@@ -146,26 +146,8 @@ disp(' ')
        output = (thirdQuartile(v) - firstQuartile(v));
     end
 
-    function totOutliers = outliers(v)
-        IQR = interquartile(v);
-        Q(1) = firstQuartile(v);
-        
-        iy = find(v<Q(1)-3*IQR);
-        if (isempty(iy))
-            outliersQ1 = v(iy);
-        else
-            outliersQ1 = [];
-        end
-        
-        % determine extreme Q3 outliers (e.g., x > Q1 + 3*IQR)
-        iy = find(v>Q(1)+3*IQR);
-        if (isempty(iy))
-            outliersQ3 = v(iy);
-        else
-            outliersQ3 = [];
-        end
-        
-        totOutliers = [outliersQ1 outliersQ3];
+    function nOutliers = outliers(v)
+        nOutliers = firstQuartile(v) + (1.5*interquartile(v));
     end
 
     function dispBoxplot(v)
