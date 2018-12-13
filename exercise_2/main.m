@@ -1,30 +1,75 @@
 function main
-clc;
-clear;
+clear
+clearvars
+clc
 
-file1 = 'Dati_1.txt';
+disp('******************')
+disp('****  Welcome ****')
+disp('******************')
+disp(' ')
+disp(' ')
+disp(' ')
 
-eseguiEsercizio(file1);
+choice = 0;
+disp('What kind of data do you want to analyze?')
+
+while(choice~=7) % set data type
+    choice = 0;
+    while(choice<1||choice>6)
+        disp('1 - Resistance of superalloys')
+        disp('2 - Systolic blood pressure (even number of samples)')
+        disp('3 - Systolic blood pressure (odd number of samples)')
+        disp('4 - Splitting Tensile Strength of Concrete Cylinders')
+        disp('5 - Random noise with Gaussian distribution (5000 samples)')
+        disp('6 - Random noise with Uniform distribution (5000 samples)')
+        choice = input('Insert choice: ');
+    end
+    
+    if(choice==1)
+        file1 = 'Dati_1.txt';
+        eseguiEsercizio(file1);
+        break
+    elseif(choice==2)
+        file1 = 'Dati_2.txt';
+        eseguiEsercizio(file1);
+        break
+    elseif(choice==3)
+        file1 = 'Dati_3.txt';
+        eseguiEsercizio(file1);
+        break
+    elseif(choice==4)
+        file1 = 'Dati_4.txt';
+        eseguiEsercizio(file1);
+        break
+     elseif(choice==5)
+        distribuzioneGaussiana()
+        break
+    elseif(choice==6)
+        distribuzioneUniforme()
+        break
+    end
+end
+
+disp(' ')
+disp(' ')
+
 
     function eseguiEsercizio(filename)
         v = parseFile(filename);
-        
         % mostra istogramma
         istogramma(v);
         
         % calcola mediana e disperzione
-        disp(strcat(['La mediana è ' num2str(mediana(v))]));
-        
-        % installa toolbox per questo
-        % disp(strcat(['La dispersione è ' num2str(dispersione(v))]));
+        disp(strcat(['The median is ' num2str(mediana(v))]));
+        disp(strcat(['The dispersion is ' num2str(dispersione(v))]));
         
         % calcola quartili
-        disp(strcat(['Il primo quartile è ' num2str(firstQuartile(v))]));
-        disp(strcat(['Il secondo quartile è ' num2str(secondQuartile(v))]));
-        disp(strcat(['Il terzo quartile è ' num2str(thirdQuartile(v))]));
+        disp(strcat(['The first quartile is ' num2str(firstQuartile(v))]));
+        disp(strcat(['The second quartile is' num2str(secondQuartile(v))]));
+        disp(strcat(['The third quartile is' num2str(thirdQuartile(v))]));
        
         % calcola interquartile
-        disp(strcat(["L'interquartile è " num2str(interquartile(v))]));
+        disp(strcat(['The interquartile is ' num2str(interquartile(v))]));
         
         % calcola outliers
         OUTLIERS = outliers(v);
@@ -38,19 +83,19 @@ eseguiEsercizio(file1);
         % mostra boxplot
         % apre nuova finestra per il grafico con figure;
         figure;
-        dispBoxplot(y)
-        
+        dispBoxplot(v);
+        hold off;
         
         
     end
 
-OUTLIERS = outliers(file1);
-
-if (isempty(OUTLIERS))
-    disp('Non ci sono outliers');            
-else
-    disp(OUTLIERS);
-end
+% OUTLIERS = outliers(file1);
+% 
+% if (isempty(OUTLIERS))
+%     disp('Non ci sono outliers');            
+% else
+%     disp(OUTLIERS);
+% end
 
 %  CHISQUARETEST = chiSquareTest(file1);
 %  if (CHIQUARETEST < 0.5)
@@ -60,8 +105,6 @@ end
 %  end
 
 
-% variance
-disp(['La varianza è: ' num2str(varianza(file1))]);
 
 % genrate uniform distribution
 %distribuzioneUniforme();
@@ -70,13 +113,13 @@ disp(['La varianza è: ' num2str(varianza(file1))]);
 %distribuzioneGaussiana();
 
     function v = parseFile(filename)
-        data = importdata(filename,' ');
-        v = sort(data);
+        file1 = importdata(filename,' ');
+        v = sort(file1);
     end
 
-    function v = istogramma(v)
+    function output = istogramma(v)
         % calcola il passo qui
-        v = histogram(v);
+        output = histogram(v);
     end
 
     function output = mediana(v)
@@ -127,12 +170,12 @@ disp(['La varianza è: ' num2str(varianza(file1))]);
 
     function dispBoxplot(v)
         figure;
-        boxplot(filename);
+        boxplot(v);
     end
 
     function dispQQPlot(v)
-        figure;
-       qqplot(filename); 
+       figure;
+       qqplot(v); 
     end
 
     function output = chiSquareTest(v)
