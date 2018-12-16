@@ -13,7 +13,7 @@ disp(' ')
 choice = 0;
 disp('What kind of data do you want to analyze?')
 
-while(choice~=7) % set data type
+while(choice~=7) 
     choice = 0;
     while(choice<1||choice>6)
         disp('1 - Resistance of superalloys')
@@ -26,26 +26,28 @@ while(choice~=7) % set data type
     end
     
     if(choice==1)
-        file1 = 'Dati_1.txt';
-        eseguiEsercizio(file1);
+         v = parseFile('Dati_1.txt');
+        eseguiEsercizio(v);
         break
     elseif(choice==2)
-        file1 = 'Dati_2.txt';
-        eseguiEsercizio(file1);
+        v = parseFile('Dati_2.txt');
+        eseguiEsercizio(v);
         break
     elseif(choice==3)
-        file1 = 'Dati_3.txt';
-        eseguiEsercizio(file1);
+        v = parseFile('Dati_3.txt');
+        eseguiEsercizio(v);
         break
     elseif(choice==4)
-        file1 = 'Dati_4.txt';
-        eseguiEsercizio(file1);
+        v = parseFile('Dati_4.txt');
+        eseguiEsercizio(v);
         break
      elseif(choice==5)
-        distribuzioneGaussiana()
+         v = distribuzioneGaussiana();
+        eseguiEsercizio(v);
         break
     elseif(choice==6)
-        distribuzioneUniforme()
+       v = distribuzioneUniforme();
+        eseguiEsercizio(v);
         break
     end
 end
@@ -54,24 +56,21 @@ disp(' ')
 disp(' ')
 
 
-    function eseguiEsercizio(filename)
-        v = parseFile(filename);
-        % mostra istogramma
+    function eseguiEsercizio(v)
+        %% a) rappresenta l’istogramma
         istogramma(v);
         
-        % calcola mediana e disperzione
+        %% b) calcola mediana e dispersione
         disp(strcat(['The median is ' num2str(mediana(v))]));
-        %disp(strcat(['The dispersion is ' num2str(dispersione(v))]));
+        disp(strcat(['The dispersion is ' num2str(dispersione(v))]));
         
-        % calcola quartili
+        %% c) calcola il primo, secondo e terzo quartile
         disp(strcat(['The first quartile is ' num2str(firstQuartile(v))]));
         disp(strcat(['The second quartile is ' num2str(secondQuartile(v))]));
         disp(strcat(['The third quartile is ' num2str(thirdQuartile(v))]));
        
-        % calcola interquartile
+        %% d) misura lo scarto (o interquartile) e gli otliers
         disp(strcat(['The interquartile is ' num2str(interquartile(v))]));
-        
-        % calcola outliers
         OUTLIERS = outliers(v);
         if (isempty(OUTLIERS))
             disp('There are no outliers');
@@ -79,34 +78,25 @@ disp(' ')
             disp(strcat(['The outliers are ' num2str(OUTLIERS)]));
         end
         
-        % mostra boxplot
-        % apre nuova finestra per il grafico con figure;
+        %% e) rappresenta i dati con il boxplot
         dispBoxplot(v);
         
+        %% f) calcola media e varianza
+        disp(strcat(['The average is ' num2str(media(v))]));
+        disp(strcat(['The variance is ' num2str(varianza(v))]));
+        
+        %% h) disegna il diagramma quantile-quantile (qqplot)
+        dispQQPlot(v)
+        
+        %% i) verifica il tipo di distribuzione con il Chi Quadro test
+        CHISQUARETEST = chiSquareTest(v);
+        if (CHISQUARETEST < 0.5)
+            disp('The curve could be a Gaussian');
+        else
+            disp('The curve is not a Gaussian');
+        end
     end
 
-% OUTLIERS = outliers(file1);
-% 
-% if (isempty(OUTLIERS))
-%     disp('Non ci sono outliers');            
-% else
-%     disp(OUTLIERS);
-% end
-
-%  CHISQUARETEST = chiSquareTest(file1);
-%  if (CHIQUARETEST < 0.5)
-%      disp('La curva potrebbe essere una gaussiana');
-%  else
-%      disp('La curva non è una gaussiana');
-%  end
-
-
-
-% genrate uniform distribution
-%distribuzioneUniforme();
-
-% genera distribuzione gaussiana
-%distribuzioneGaussiana();
 
     function v = parseFile(filename)
         file1 = importdata(filename,' ');
@@ -117,10 +107,10 @@ disp(' ')
         % calcola il passo qui
         output = histogram(v);
     end
-
+    
     function output = mediana(v)
-         output = median(v);
-    end
+        output = median(v);
+    end    
 
     function output = dispersione(v)
         output = range(v);
@@ -152,7 +142,6 @@ disp(' ')
     end
 
     function dispQQPlot(v)
-       figure;
        qqplot(v); 
     end
 
