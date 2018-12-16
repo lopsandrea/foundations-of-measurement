@@ -26,3 +26,10 @@ codegen/
 
 # Octave session info
 octave-workspace
+
+# LaTeX editor file
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz

@@ -142,6 +142,7 @@ disp(' ')
     end
 
     function dispQQPlot(v)
+       figure;
        qqplot(v); 
     end
 

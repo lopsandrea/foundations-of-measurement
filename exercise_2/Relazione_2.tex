@@ -1,0 +1,347 @@
+\documentclass[a4paper]{article}
+
+\title{\textbf{Relazione Esercizio sulla Statistica Descrittiva}\\{\normalsize - Esercitazione 2 -}}
+\author{Andrea Lops\\
+		Paolo Rotolo\\
+		Laura Loperfido\\
+		Teresa Pantone
+	   }
+		
+\date{16/12/2018}
+
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=15mm,
+ top=25mm,
+ }
+\begin{document}
+
+\maketitle
+
+\section{Esercizio:}
+Utilizzando i metodi dell’\emph{analisi statistica descrittiva} si vogliono ottenere informazioni utili
+sulle proprietà di alcuni dati (6 casi differenti) estratti dall’analisi di un processo.
+\subsection {Azioni preliminari:}
+
+Prima di andare ad analizzare i dati effettuiamo il parse dei .txt grezzi forniti dal Prof. Attivissimo e li andiamo ad ordinare.
+
+
+\section{Caso 1}
+Ci viene fornuito un set di dati che afferiscono dalle misure delle resistenze di superleghe per razzi.
+\subsection{Istogramma (Figure 1)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"istogramma1".jpg}
+	\caption{Istogramma caso 1}
+	\label{}
+\end{figure}
+
+\subsection{Mediana e dispersione}
+Il valore centrale dell'array è la mediana:
+\begin{center}
+	mediana = 87.5
+\end{center}
+Dispersione :
+\begin{equation}
+	d=M_{ax}-M_{in}=22
+\end{equation}
+\subsection{Primo, Secondo e Terzo Quartile}
+\begin{equation}
+	30*0.25= 8 \; \; \; Q_1=x_8=83
+\end{equation}
+\begin{equation}
+	30*0.50= 15 \; \; \;  Q_2=(x_{15}+x_{16})/2=87.5
+\end{equation}
+\begin{equation}
+	30*0.75= 23 \; \; \;  Q_3=x_{23}=89
+\end{equation}
+
+\subsection{Interquartile e Outliers}
+Interquartile: è l'ampiezza della fascia centrale (compresa tra primo e terzo quartile) dei valori analizzati:
+\begin{equation}
+	Q_3-Q_1=6
+\end{equation}
+Outliers: sono i valori che si discostano dagli altri valori osservati
+\begin{equation}
+	Q_3+(1.5*Interquartile)=98
+\end{equation}
+
+\subsection{Boxplot (Figure 2)}
+Metodo grafico per rappresentare la distribuzione dei valori usando gli Outliers
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"boxplot1".jpg}
+	\caption{Boxplot caso 1}
+	\label{}
+\end{figure}
+
+\subsection{Media e Varianza}
+Media: 
+\begin{equation}
+	M_{a}={\frac  {1}{n}}\sum _{{i=1}}^{n}x_{i}
+\end{equation}
+Varianza: 
+\begin{equation}
+	\sigma _{X}^{2}={\mathbb  {E}}{\Big [}{\big (}X-{\mathbb  {E}}[X]{\big )}^{2}{\Big ]}
+\end{equation}
+\subsection{Diagrama quantile-quantile (Figure 3)}
+Metodo grafico per rappresentare la distribuzione dei valori usando gli Outliers
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"qqplot1".jpg}
+	\caption{QQPlot caso 1}
+	\label{}
+\end{figure}
+
+\subsection{Verifica del tipo di distribuzione col \emph{Chi Quadro test}}
+La funzione \emph{Chi Quadro test} ci restituice un valore utile per valutare la natura della curva. Infati se il suo valore supera 0.5 essa sicuramente non sarà Gaussiana. In questo caso specifico la curva può essere Gaussiana.
+
+
+\section{Caso 2}
+
+Ci viene fornito un set di dati in numero pari che afferiscono all'ambito medico, nello specifico alla pessione sistolica di 15 pazienti donna di età 20-22. 
+\\
+\subsection{Istogramma (Figure 4)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"istogramma2".jpg}
+	\caption{Istogramma caso 2}
+	\label{}
+\end{figure}
+
+\subsection{Mediana e dispersione}
+\begin{center}
+	mediana = 144
+\end{center}
+\begin{center}
+	dispersione = 28
+\end{center}
+\subsection{Primo, Secondo e Terzo Quartile}
+Primo Quartile:
+\begin{center}
+	$Q_1= 138$
+\end{center}
+Secondo Quartile:
+\begin{center}
+	$Q_2= 144$
+\end{center}
+Terzo Quartile:
+\begin{center}
+	$Q_3= 152$
+\end{center}
+
+
+\subsection{Interquartile e Outliers}
+\begin{center}
+	interquartile = 14
+\end{center}
+\begin{center}
+	outliers = 173
+\end{center}
+
+\subsection{Boxplot (Figure 5)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"boxplot2".jpg}
+	\caption{Boxplot caso 2}
+	\label{}
+\end{figure}
+
+\subsection{Media e Varianza}
+Media: 
+\begin{equation}
+	M_{a} = 144.5
+\end{equation}
+Varianza: 
+\begin{equation}
+	\sigma _{X}^{2} = 67.29
+\end{equation}
+
+\subsection{Diagrama quantile-quantile (Figure 6)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"qqplot2".jpg}
+	\caption{QQPlot caso 2}
+	\label{}
+\end{figure}
+
+\subsection{Verifica del tipo di distribuzione col \emph{Chi Quadro test}}
+La curva può essere Gaussiana.
+
+
+\section{Caso 3}
+
+Come nel caso 2, abbiamo una serie di dati inerenti alla pressione sistolica, ma dispari.
+In più il caso 3 si differenzia dal 2 solo per un dato, infatti dai calcoli si può notare come statisticamente parlando non discordano molto tra loro.
+\\
+
+\subsection{Istogramma (Figure 7)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"istogramma3".jpg}
+	\caption{Istogramma caso 3}
+	\label{}
+\end{figure}
+
+\subsection{Mediana e dispersione}
+La mediana ha l'influenza del caso dispari, infatti prende l'elemento mediano che è singolo 
+\begin{center}
+	mediana = 144
+\end{center}
+\begin{center}
+	dispersione = 28
+\end{center}
+\subsection{Primo, Secondo e Terzo Quartile}
+Primo Quartile:
+\begin{center}
+	$Q_1= 138$
+\end{center}
+Secondo Quartile:
+\begin{center}
+	$Q_2= 144$
+\end{center}
+Terzo Quartile:
+\begin{center}
+	$Q_3= 152$
+\end{center}
+
+
+\subsection{Interquartile e Outliers}
+\begin{center}
+	interquartile = 14
+\end{center}
+\begin{center}
+	outliers = 173
+\end{center}
+
+\subsection{Boxplot (Figure 8)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"boxplot3".jpg}
+	\caption{Boxplot caso 3}
+	\label{}
+\end{figure}
+
+\subsection{Media e Varianza}
+Media: 
+\begin{equation}
+	M_{a} = 144.613
+\end{equation}
+Varianza: 
+\begin{equation}
+	\sigma _{X}^{2} = 69.119
+\end{equation}
+
+\subsection{Diagrama quantile-quantile (Figure 9)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"qqplot3".jpg}
+	\caption{QQPlot caso 3}
+	\label{}
+\end{figure}
+
+\subsection{Verifica del tipo di distribuzione col \emph{Chi Quadro test}}
+
+La curva può essere Gaussiana.
+
+
+
+
+\section{Caso 4}
+In questo caso abbiamo 100 valori provenienti da delle analisi della resistenza alla trazione di cilindri di cemento.
+\\
+
+\subsection{Istogramma (Figure 10)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"istogramma4".jpg}
+	\caption{Istogramma caso 4}
+	\label{}
+\end{figure}
+
+\subsection{Mediana e dispersione}
+La mediana ha l'influenza del caso dispari, infatti prende l'elemento mediano che è singolo 
+\begin{center}
+	mediana = 360
+\end{center}
+\begin{center}
+	dispersione = 140
+\end{center}
+\subsection{Primo, Secondo e Terzo Quartile}
+Primo Quartile:
+\begin{center}
+	$Q_1= 340$
+\end{center}
+Secondo Quartile:
+\begin{center}
+	$Q_2= 360$
+\end{center}
+Terzo Quartile:
+\begin{center}
+	$Q_3= 390$
+\end{center}
+
+
+\subsection{Interquartile e Outliers}
+\begin{center}
+	interquartile = 50
+\end{center}
+\begin{center}
+	outliers = 465
+\end{center}
+
+\subsection{Boxplot (Figure 11)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"boxplot4".jpg}
+	\caption{Boxplot caso 4}
+	\label{}
+\end{figure}
+
+\subsection{Media e Varianza}
+Media: 
+\begin{equation}
+	M_{a} = 364.7
+\end{equation}
+Varianza: 
+\begin{equation}
+	\sigma _{X}^{2} = 720.111
+\end{equation}
+
+\subsection{Diagrama quantile-quantile (Figure 12)}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"qqplot4".jpg}
+	\caption{QQPlot caso 4}
+	\label{}
+\end{figure}
+
+\subsection{Verifica del tipo di distribuzione col \emph{Chi Quadro test}}
+
+La curva non può essere Gaussiana.
+
+
+
+\section{Caso 5}
+In questo caso abbiamo 5000 valori generati casualmente con distribuzione Gaussiana.
+A differenza dei casi precedenti è inutile riportare qualsivoglia dato, visto che sono generati casualmente, però l'unica analisi sicuramente giusta per tutti i \emph{"Casi 5"} è che il Chi Quadro test restituirà sempre che la curva può essere Gaussiana.
+\\
+
+
+
+\subsection{Verifica del tipo di distribuzione col \emph{Chi Quadro test}}
+
+La curva può essere Gaussiana.
+
+\section{Caso 6}
+Come per il caso 5 abbiamo 5000 valori generati casualmente, ma con distribuzione Uniforme. 
+Questo significa che sicuramente il \emph{Chi Quadro test} restituirà che la curva non può essere Gaussiana.
+\\
+\subsection{Verifica del tipo di distribuzione col \emph{Chi Quadro test}}
+
+La curva non può essere Gaussiana.
+\end{document}
