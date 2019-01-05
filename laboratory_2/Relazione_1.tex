@@ -118,19 +118,25 @@ Con risultato:
 		I_{max} = 20.82 A
 	 \end{equation}
 \end{Large}
-\section {Incertezza su grandezze elettriche, metodo voltamperometrico}
 
+
+\section {Incertezza su grandezze elettriche, metodo voltamperometrico}
+Per effettuate le misure seguenti sono stati adoperati: il multimetro da banco \emph{Agilent 34410} e il multimetro palmare \emph{U/U1253B}.
+\subsection{Misura diretta della resistenza mediante due morsetti}
+Adoperando due morsetti si è arrivati alla misurazione della seguente resistenza:
 \begin{Large}
 	\begin{equation}
-		R_{X2W}= 1.89 \Omega
+		R_{X2W}= 0.189 \Omega
 	\end{equation}
 	\begin{equation}
 		U_{R_{X2W}} = [\pm 0.01\%rdg \pm 0.004\% FSO]
 	 \end{equation}
 	 \begin{equation}
-		R_{X2W} = 1.89 \pm 0.004 \Omega
+		R_{X2W} = 0.189 \pm 0.004 \Omega
 	 \end{equation}
 \end{Large}
+Purtroppo però la misura è \emph{errata}: a causa delle resistenze dei due puntali, infatti esse come tutta la cavetteria hanno una resistenza interna.
+Il problema è fortunatamnete di facile risoluzione, compensando i puntali stessi. Ed ecco che si ottiene una misurazione più precisa.
 
 \begin{Large}
 	\begin{equation}
@@ -143,7 +149,8 @@ Con risultato:
 		R_{X2W_{2}} = 0.007 \pm 0.004 \Omega
 	 \end{equation}
 \end{Large}
-
+\subsection{Misura della resistenza mediante quanto morsetti}
+Quello che si è andato a misurare con quattro puntali è solamente la \emph{caduta di tensione} nel resistore: infatti il flusso di corrente misurato nei puntali è pressochè nullo:
 \begin{Large}
 	\begin{equation}
 		R_{X4W}= 0.1909 \Omega
@@ -155,7 +162,8 @@ Con risultato:
 		R_{X4W} = 0.1909\pm 0.006 \Omega
 	 \end{equation}
 \end{Large}
-
+\subsection{Misura di resistenza con il metodo amperometrico}
+Per ottenere la resistenza $R_{X_{VA}}$ si è andati a calcolare prima $I_{VA}$ e poi $V_{VA}$
 \begin{Large}
 	\begin{equation}
 		I_{VA}= 4.9433 A
@@ -179,7 +187,7 @@ Con risultato:
 		V_{VA} = 0.96 \pm 0.004 mV
 	 \end{equation}
 \end{Large}
-
+E successivamente la resistenza:
 \begin{Large}
 	\begin{equation}
 		R_{X_{VA}}= \frac{V_{VA}}{I_{VA}} =0.000194 \Omega
@@ -193,8 +201,8 @@ Con risultato:
 \end{Large}
 
 \section {Incertezza su grandezze elettriche, metodo di confronto delle cadute di tensione}
-
-Prendiamo l'incertezza che ci riguarda per il multimetro Agilent 34410:
+È stato d'apprima impostato il multimetro come voltmetro e successivamente sono state misurate le tensioni sul provino e sul campione:
+Prendiamo l'incertezza che ci riguarda per il multimetro:
 
 \begin{Large} 
 	\begin{equation}
@@ -204,12 +212,13 @@ Prendiamo l'incertezza che ci riguarda per il multimetro Agilent 34410:
 E quindi si ottiene:
 \begin{Large} 
 	\begin{equation}
-		U_{V_X} = 0.817 \pm 0.004 mV
+		V_X = 0.817 \pm 0.004 mV
 	 \end{equation}
 	 \begin{equation}
-		U_{V_C} = 0.503 \pm 0.004 mV
+		V_C = 0.503 \pm 0.004 mV
 	 \end{equation}
 \end{Large}
+\subsection{Calcolo del rapporto delle tensioni}
 \begin{Large}
 	\begin{equation}
 		r = {V_X}/{V_C}= 1.624
@@ -237,11 +246,13 @@ Definiamo prima:
 		r = 1.624 \pm 0.011
 	 \end{equation}
 \end{Large}
+\subsection{Calcolo del valore della resistenza del provino}
 \begin{Large} 
 	\begin{equation}
 		R_{X_{CdT}} = R_c* r = 
 	 \end{equation}
 \end{Large}
+\subsection{Calcolo della resistività del rame}
 
 
 \end{document}
