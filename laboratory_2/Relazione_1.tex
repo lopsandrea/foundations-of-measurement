@@ -10,13 +10,14 @@
 \date{19/12/2018}
 
 \usepackage{graphicx}
+\usepackage{listings}
 
 \begin{document}
 
 \maketitle
 
 \section {Incertezza su grandezze dimensionali}
-
+\subsection{Misure con centimetro estensibile}
 Sapendo che l'incertezza sulle misure col centimetro è:
 \begin{Large} 
 	\begin{equation}
@@ -32,6 +33,7 @@ Si è calcolata lincertezza delle relative misure:
 		l_v = 1000\pm2mm
 	 \end{equation}
 \end{Large}
+\subsection{Misure col calibro digitale}
 Per quanto riguarda invece le misure effettuate col calibro digitale si ha: 
 \begin{Large} 
 	\begin{equation}
@@ -47,7 +49,8 @@ Si è calcolata lincertezza delle relative misure:
 		h = 3.05\pm0.03mm
 	 \end{equation}
 \end{Large}
-Successivamente sono state effettuate le misure indirette:
+\subsection{Misure di superfici}
+Successivamente sono state effettuate le misure indirette con i dati acquisiti:
 \begin{Large} 
 	\begin{equation}
 		S = h*w = 91.744 mm^2
@@ -83,11 +86,16 @@ E quindi:
 		S_L =78200.0\pm 500.0mm^2
 	 \end{equation}
 \end{Large}
-
+\subsection{Stima del valore del provino in rame}
+Usando la formula forniteci e i risultati ottenuti precedentemente è stato possibile misurare:
 \begin{Large}
 	\begin{equation}
 		R_{X_{m}} =\frac{\varphi*l_v}{s}= 0.00019183815835 \Omega
 	 \end{equation}
+\end{Large}
+Con la relativa incertezza
+\begin{Large}
+	
 	\begin{equation}
 		U_{R_{X_{m}}} = \varphi\frac{U{l_v}}{l_v}+\varphi\frac{U_{S}}{S}
 	 \end{equation}
@@ -95,7 +103,9 @@ E quindi:
 		R_{X_{m}} = (19183815835 \pm 4)10^{-14} \Omega
 	 \end{equation}
 \end{Large}
-
+\section{Dimensionamento $I_{max}$}
+Con il seguente programma in Matlab è stato possibile definire $I_{max}$
+\lstinputlisting [language=Matlab]{source_filename.py}
 \section {Incertezza su grandezze elettriche, metodo voltamperometrico}
 
 \begin{Large}
