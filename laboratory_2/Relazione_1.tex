@@ -249,10 +249,27 @@ Definiamo prima:
 \subsection{Calcolo del valore della resistenza del provino}
 \begin{Large} 
 	\begin{equation}
-		R_{X_{CdT}} = R_c* r = 
+		R_{X_{CdT}} = R_c* r = 0.0001624 \Omega
+	 \end{equation}
+	 \begin{equation}
+		U_{R_{X_{CdT}}} = U_{R_c}*r+R_c*U_r
+	 \end{equation}
+	 \begin{equation}
+		R_{X_{CdT}} = 0.0001624\pm 0.016 \Omega
 	 \end{equation}
 \end{Large}
-\subsection{Calcolo della resistività del rame}
 
+\subsection{Calcolo della resistività del rame}
+\begin{Large} 
+	\begin{equation}
+		\rho_{X_{CdT}} = R_{X_{CdT}}*\frac{S}{l_V} = 1,48*10^{-8} \Omega*m
+	 \end{equation}
+	 \begin{equation}
+		U_{\rho_{X_{CdT}}} = \frac{S}{l_V}*U_{R_{X_{CdT}}}+\frac{R_{X_{CdT}}}{l_V}*U_S+\frac{S*R_{X_{CdT}}}{{l_V}^2}*U_{l_V}
+	 \end{equation}
+	 \begin{equation}
+		\rho_{X_{CdT}} = (1.48\pm 0.001)*10^{-8} \Omega*m
+	 \end{equation}
+\end{Large}
 
 \end{document}
