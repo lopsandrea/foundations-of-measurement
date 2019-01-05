@@ -142,7 +142,7 @@ E quindi:
 		U_{I_{VA}} = [\pm 0.3\%rdg \pm 10\% FSO]
 	 \end{equation}
 	 \begin{equation}
-		I_{VA} = 4.9433 \pm 0.5 A
+		I_{VA} = 4.9 \pm 0.5 A
 	 \end{equation}
 \end{Large}
 
@@ -160,13 +160,13 @@ E quindi:
 
 \begin{Large}
 	\begin{equation}
-		R_{X_{VA}}= 0.000194 \Omega
+		R_{X_{VA}}= \frac{V_{VA}}{I_{VA}} =0.000194 \Omega
 	\end{equation}
 	\begin{equation}
-		U_{R_{X_{VA}}} = [\pm 0.010\%rdg \pm 0.004\% FSO]
+		U_{R_{X_{VA}}} = (\frac{U_{V_{VA}}}{V_{VA}}+\frac{U_{I_{VA}}}{I_{VA}})R_{X_{VA}}
 	 \end{equation}
 	 \begin{equation}
-		R_X{_{VA}} = 0.000194 \pm 0.004 \Omega
+		R_X{_{VA}} = 0.00019\pm 0.00002\Omega
 	 \end{equation}
 \end{Large}
 
@@ -182,12 +182,40 @@ Prendiamo l'incertezza che ci riguarda per il multimetro Agilent 34410:
 E quindi si ottiene:
 \begin{Large} 
 	\begin{equation}
-		U_{V_X} = 0.817 \pm 0.00354085 mV
+		U_{V_X} = 0.817 \pm 0.004 mV
 	 \end{equation}
 	 \begin{equation}
-		U_{V_C} = 0.503 \pm 0.00352515 mV
+		U_{V_C} = 0.503 \pm 0.004 mV
 	 \end{equation}
 \end{Large}
+\begin{Large}
+	\begin{equation}
+		r = {V_X}/{V_C}= 1.624
+	 \end{equation}
+\end{Large}
+\begin{Large} 
+	 \begin{equation}
+		U_{r} = U_{O}|\frac{1}{V_X}-\frac{1}{V_C}|+(U_{inl}+U_q)(\frac{1}{|V_X|}+\frac{1}{|V_C|})
+	 \end{equation}
+\end{Large}
+Definiamo prima:
+\begin{Large}
+	\begin{equation}
+		U_O= 0
+	 \end{equation}
+	 \begin{equation}
+		U_{inl} = 3.49 \mu V
+	 \end{equation}
+	 \begin{equation}
+		U_{q} = \frac{Q}{2}= \frac{FS}{2(n\ digit)}=10nV
+	 \end{equation}
+\end{Large}
+\begin{Large} 
+	\begin{equation}
+		r = 1.624
+	 \end{equation}
+\end{Large}
+
 
 
 \end{document}
