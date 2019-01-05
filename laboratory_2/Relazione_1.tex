@@ -16,6 +16,8 @@
 
 \maketitle
 
+\lstset{language=Matlab}
+
 \section {Incertezza su grandezze dimensionali}
 \subsection{Misure con centimetro estensibile}
 Sapendo che l'incertezza sulle misure col centimetro è:
@@ -105,7 +107,13 @@ Con la relativa incertezza
 \end{Large}
 \section{Dimensionamento $I_{max}$}
 Con il seguente programma in Matlab è stato possibile definire $I_{max}$
-\lstinputlisting [language=Matlab]{source_filename.py}
+\lstinputlisting{main.m}
+Con risultato: 
+\begin{Large}
+	\begin{equation}
+		R_{max} = A
+	 \end{equation}
+\end{Large}
 \section {Incertezza su grandezze elettriche, metodo voltamperometrico}
 
 \begin{Large}
@@ -222,7 +230,7 @@ Definiamo prima:
 \end{Large}
 \begin{Large} 
 	\begin{equation}
-		r = 1.624 \pm 0.0113
+		r = 1.624 \pm 0.011
 	 \end{equation}
 \end{Large}
 \begin{Large} 
