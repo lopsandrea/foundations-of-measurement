@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.12.2)  6 DEC 2018 23:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2019.3.27)  6 APR 2019 12:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/alops/Desktop/foundations-of-measurement/laboratory_1/Relazione_1.tex
-(/home/alops/Desktop/foundations-of-measurement/laboratory_1/Relazione_1.tex
-LaTeX2e <2018-04-01> patch level 5
+**/home/alops/Studio/Misure/foundations-of-measurement/laboratory_1/Relazione_1.tex
+(/home/alops/Studio/Misure/foundations-of-measurement/laboratory_1/Relazione_1.tex
+LaTeX2e <2018-12-01>
 (/usr/share/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -40,7 +40,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
-) (./Relazione_1.aux
+) (/home/alops/Studio/Misure/foundations-of-measurement/laboratory_1/Relazione_1.aux
 
 LaTeX Warning: Label `' multiply defined.
 
@@ -63,7 +63,7 @@ LaTeX Font Info:    ... okay on input line 14.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count88
 \scratchdimen=\dimen105
-\scratchbox=\box26
+\scratchbox=\box27
 \nofMPsegments=\count89
 \nofMParguments=\count90
 \everyMPshowfont=\toks15
@@ -140,7 +140,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 42.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figure1.jpg>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/alops/Studio/Misure/foundations-of-measurement/laboratory_1/figure1.jpg>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 45.
 <"figure3".jpg, id=13, 963.6pt x 722.7pt>
@@ -148,7 +148,7 @@ File: "figure3".jpg Graphic file (type jpg)
 <use "figure3".jpg>
 Package pdftex.def Info: "figure3".jpg  used on input line 60.
 (pdftex.def)             Requested size: 192.71658pt x 144.53743pt.
- [2 <./figure2.png> <./figure3.jpg>]
+ [2 </home/alops/Studio/Misure/foundations-of-measurement/laboratory_1/figure2.png> </home/alops/Studio/Misure/foundations-of-measurement/laboratory_1/figure3.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 74--76
 
  []
@@ -298,21 +298,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 285--287
 
  []
 
-[7] (./Relazione_1.aux)
+[7] (/home/alops/Studio/Misure/foundations-of-measurement/laboratory_1/Relazione_1.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1467 strings out of 492639
- 20780 string characters out of 6135497
- 83761 words of memory out of 5000000
- 5358 multiletter control sequences out of 15000+600000
+ 1467 strings out of 492616
+ 21190 string characters out of 6135177
+ 84235 words of memory out of 5000000
+ 5381 multiletter control sequences out of 15000+600000
  9522 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,25p,362b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,6n,25p,368b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Relazione_1.pdf (7 pages, 539626 bytes).
+Output written on /home/alops/Studio/Misure/foundations-of-measurement/laboratory_1/Relazione_1.pdf (7 pages, 539853 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream

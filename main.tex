@@ -1,0 +1,48 @@
+\documentclass[a4paper, right=1cm]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{layout}
+\marginparpush = 0pt
+\marginparwidth = 0pt
+\begin{document}
+	\layout
+\title{\begin{center}
+		\setlength{\tabcolsep}{0pt}
+		\begin{tabular}{>{\raggedleft}m{2.5cm}>{\centering}m{\textwidth - 5cm\relax}>{\raggedright}m{2.5cm}}
+			\includegraphics[width=\linewidth]{source/poliba.png}%
+			&%
+			\textbf{ } \\[5pt]%
+			\textbf{\ }%
+			&%
+			\includegraphics[width=\linewidth]{source/dei.png} %
+		\end{tabular}
+	\end{center}
+	\textbf{Raccolta di relazioni\\}
+	\textbf{\large- Corso di Fondamneti delle Misurazione -\\ }
+	{\normalsize 
+		- Ingegneria Informatica e dell'Automazione -
+}}
+\author{A cura di:\\
+	Laura Loperfino\\
+	Andrea Lops \\
+	Teresa Pantone\\
+	Paolo Rotolo\\
+	\\
+	Prof. Ing. Filippo Attivissimo
+}
+\date{January 2013}
+
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+\include{./exercise_2/Relazione_2.tex}
+
+\backmatter
+% bibliography, glossary and index would go here.
+
+\end{document}
