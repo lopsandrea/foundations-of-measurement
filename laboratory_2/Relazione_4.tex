@@ -51,20 +51,38 @@
 \lstset{language=Matlab}
 
 \section {Incertezza su grandezze dimensionali}
+%TODO:  aggiungere commento @paolo 
 \subsection{Misure con centimetro estensibile}
-Sapendo che l'incertezza sulle misure col centimetro è:
+L'unica incertezza che interressa le misure effettuate con il centimetro è l'incertezza assoluta di lettura, ovvero il massimo errore che si commette nell'apprezzare una frazione di divisione
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.80]{"fig1".jpeg}
+	\caption{Centimetro estensibile}
+	\label{}
+\end{figure}
 \begin{Large} 
 	\begin{equation}
-		U_{l} = 2mm
-	 \end{equation}
+	\lambda_{min}=\frac{1}{2}*\frac{1}{10} div= \frac{1}{20}div 
+	\end{equation}
+\end{Large}
+\begin{Large} 
+	\begin{equation}
+	U_{\lambda_{min}}=\frac{1}{2}*\frac{1}{20} = \frac{1}{40} 
+	\end{equation}
+\end{Large}
+\begin{Large} 
+	\begin{equation}
+	\Delta_x=2U_{\lambda_{min}} = 0.5 mm 
+	\end{equation}
 \end{Large}
 Si è calcolata lincertezza delle relative misure: 
 \begin{Large} 
 	\begin{equation}
-		l_a = 1180\pm2mm
+		l_a = 1180\pm0.5mm
 	 \end{equation}
 	 \begin{equation}
-		l_v = 1000\pm2mm
+		l_v = 1000\pm0.5mm
 	 \end{equation}
 \end{Large}
 \subsection{Misure col calibro digitale}
@@ -124,17 +142,17 @@ E quindi:
 Usando la formula forniteci e i risultati ottenuti precedentemente è stato possibile misurare:
 \begin{Large}
 	\begin{equation}
-		R_{X_{m}} =\frac{\varphi*l_v}{s}= 0.00019183815835 \Omega
+		R_{X_{m}} =\frac{\varphi*l_v}{S}= 0.1918 m\Omega
 	 \end{equation}
 \end{Large}
 Con la relativa incertezza
 \begin{Large}
 	
 	\begin{equation}
-		U_{R_{X_{m}}} = \varphi\frac{U{l_v}}{l_v}+\varphi\frac{U_{S}}{S}
+		U_{R_{X_{m}}} = \varphi\frac{d\frac{\varphi*l_v}{s}}{dl_v}U{l_v}+\varphi\frac{d\frac{\varphi*l_v}{s}}{dS}U{S}
 	 \end{equation}
 	 \begin{equation}
-		R_{X_{m}} = (19183815835 \pm 4)10^{-14} \Omega
+		R_{X_{m}} =0.192\pm 0.004 m \Omega
 	 \end{equation}
 \end{Large}
 
