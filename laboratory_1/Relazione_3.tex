@@ -98,7 +98,15 @@ Di seguito sono riportati i calcoli relativi all'incertezza che verranno illustr
 
 \subsubsection{Tempo di salita con sonda non compensata}
 
-Per calcolare l'incertezza si utilizza la seguente formula, presente nel datasheet dell'oscilloscopio:
+Per calcolare l'incertezza in questo caso si fa riferimento al valore \emph{cursor accuracy} presente nel datasheet dell'oscilloscopio (\emph{Figure 4}), riferito all'asse dei tempi:
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.50]{"figplus".jpg}
+	\caption{Datasheet oscilloscopio HP54603B}
+	\label{}
+\end{figure}
+
 
 \begin{Large}
 	\begin{equation}
@@ -119,19 +127,19 @@ Il numero di divisioni è 10, quindi:
 Quindi si ricava l'incertezza:
 \begin{Large}
 	\begin{equation}
-  		{t_r}= 5.51\mu s \pm 0,00055\mu s \pm0,04\mu s \pm200ps %TODO arrotondare
+  		{t_r}= 5.50\mu s\pm (+ 0,00055\mu s + 0,04\mu s + 200ps)
 	\end{equation}
 \end{Large}\\
 Per rendere più elegante la scrittura del risultato senza intaccarne la validità, si decide di approssimarlo alla seconda cifra decimale.
 \begin{Large}
 	\begin{equation}
-  		{t_r}= 5.51\pm 0,04 \mu s
+  		{t_r}= 5.50\pm 0,04 \mu s
 	\end{equation}
 \end{Large}\\
 \subsubsection{Tempo di discesa con sonda non compensata}
 \begin{Large}
 	\begin{equation}
-  		{t_f}= 5.71\mu s \pm 0,00057\mu s \pm0,04\mu s \pm200ps
+  		{t_f}= 5.70\mu s\pm (+ 0,00057\mu s + 0,04\mu s + 200ps)
 	\end{equation}
 \end{Large}\\
 
@@ -139,7 +147,7 @@ Arrotondando:
 
 \begin{Large}
 	\begin{equation}
-  		{t_f}= 5.71\pm 0,04 \mu s
+  		{t_f}= 5.70\pm 0,04 \mu s
 	\end{equation}
 \end{Large}\\
 
@@ -147,7 +155,7 @@ Arrotondando:
 
 \begin{Large}
 	\begin{equation}
-		{t_{r_{10x}}}= 975ns \pm 0,0975ns \pm10ns \pm200ps
+		{t_{r_{10x}}}= 975ns \pm( + 0,0975ns + 10ns + 200ps)
 	\end{equation}
 \end{Large}\\
 
@@ -163,7 +171,7 @@ Arrotondando:
 
 \begin{Large}
 	\begin{equation}
-		t_{r_R}= 7.11\mu s \pm 0,00071\mu s \pm0,04\mu s \pm200ps
+		t_{r_R}= 7.11\mu s \pm( + 0,00071\mu s + 0,04\mu s + 200ps)
 	\end{equation}
 \end{Large}\\
 
@@ -179,7 +187,7 @@ Arrotondando:
 
 \begin{Large}
 	\begin{equation}
-		{t_{r_{R_{10x}}}}= 1300ns \pm 0,13ns \pm10ns \pm200ps
+		{t_{r_{R_{10x}}}}= 1300ns \pm ( + 0,13ns + 10ns + 200ps)
 	\end{equation}
 \end{Large}\\
 
@@ -194,7 +202,7 @@ Arrotondando:
 \subsubsection{Periodo segnale sinusoidale}
 \begin{Large}
 	\begin{equation}
-  		{T_s}= 1000\mu s\pm 0.1 \mu s \pm4 \mu s \pm200ps
+  		{T_s}= 1000\mu s\pm (+ 0.1 \mu s + 4 \mu s + 200ps)
 	\end{equation}
 \end{Large}\\
 \\
@@ -211,19 +219,20 @@ Arrotondando:
 
 
 \subsubsection{Frequenza segnale sinusoidale}
-Essendo una misura indiretta useremo la seguente formula:
-
-\begin{Large}
-	\begin{equation}
-		{U_{f_s}}= |\frac{d\frac{1}{T_s}}{d{T_s}}|U_{{T_s}}
-	\end{equation}
-\end{Large}\\
-Quindi l'incertezza:
-\begin{Large}
-	\begin{equation}
-		{U_{f_s}}= \frac{1}{1000000}*4.1=4.1 Hz
-	\end{equation}
-\end{Large}\\
+%Essendo una misura indiretta l'incertezza totale è data dalla somma delle derivate parziali delle %componenti:
+%
+%\begin{Large}
+%	\begin{equation}
+%	{U_{f_s}}= |\frac{d\frac{1}{T_s}}{d{T_s}}|U_{{T_s}}
+%	\end{equation}
+%\end{Large}\\
+%Quindi l'incertezza:
+%\begin{Large}
+%	\begin{equation}
+%	{U_{f_s}}= \frac{1}{1000000}*4.1=4.1 Hz
+%	\end{equation}
+%\end{Large}\\
+Per quanto riguarda l'incertezza della frequenza, il calcolo è banale in quanto si ricorre alla stessa incertezza relativa al periodo del segnale sinusoidale con diversa unità di misura(\emph{Hz})
 \begin{Large}
 	\begin{equation}
   		{f_s}= 1000\pm 4Hz
@@ -245,7 +254,7 @@ Quindi:
 	\end{equation}
 \end{Large}\\
 
-In questo caso quindi l'incertezza si ricava usando la seguente formula: 
+Essendo una misura indiretta l'incertezza totale è data dalla somma delle derivate parziali delle componenti:
 \begin{Large}
 	\begin{equation}
 		U_{tot}=\sum_{i=1}^{N}|{\frac{df}{dy_i}}| U_i
@@ -295,11 +304,12 @@ Quindi in conclusione:
 	\end{equation}
 \end{Large}\\
 
-\subsection{Tensione picco-picco segnale sinusoidale} %TODO MOLTO GROSSO
-Per quanto riguarda la misura della tensione picco-picco del segnale sinusoidale, si adopera il sistema verticale a due cursori con incertezza:
+\subsection{Tensione picco-picco segnale sinusoidale} 
+Per quanto riguarda la misura della tensione picco-picco del segnale sinusoidale, si si fa riferimento la \emph{dual cursor accuracy} (\emph{Figure 4}) :
+
 \begin{Large}
 	\begin{equation}
-		U_{V_{p-p_{s}}}= [\pm 2.4\% rdg\pm 0.4\%]
+		U_{V_{p-p_{s}}}= [\pm 2.4\% rdg\pm 0.4\%FSO]
 	\end{equation}
 \end{Large}\\
 
