@@ -1,23 +1,46 @@
 \documentclass[a4paper]{article}
 
-\title{\textbf{Relazione Esercizio sulla Statistica Descrittiva}\\{\normalsize - Esercitazione 2 -}}
-\author{Andrea Lops\\
-		Paolo Rotolo\\
-		Laura Loperfido\\
-		Teresa Pantone
-	   }
-		
-\date{16/12/2018}
-
 \usepackage{graphicx}
 \usepackage{amsfonts}
 \usepackage{geometry}
- \geometry{
- a4paper,
- total={170mm,257mm},
- left=15mm,
- top=25mm,
- }
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{layout}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=15mm,
+	top=15mm,
+}
+
+
+\title{\begin{center}
+		\setlength{\tabcolsep}{0pt}
+		\begin{tabular}{>{\raggedleft}m{3cm}>{\centering}m{\textwidth - 5cm\relax}>{\raggedright}m{3cm}}
+			\includegraphics[width=\linewidth]{poliba.png}%
+			&%
+			\textbf{ } \\[5pt]%
+			\textbf{\ }%
+			&%
+			\includegraphics[width=\linewidth]{dei.png} %
+		\end{tabular}
+	\end{center}
+	\textbf{Relazione Esercizio sulla Statistica Descrittiva\\}
+	\textbf{\large- Corso di Fondamenti delle Misurazione -\\ }
+	{\normalsize 
+		- Ingegneria Informatica e dell'Automazione -
+}}
+\author{A cura di:\\
+	Laura Loperfino\\
+	Andrea Lops \\
+	Teresa Pantone\\
+	Paolo Rotolo\\
+	\\
+	Prof. Ing. Filippo Attivissimo
+}
+\date{16/12/2018}
+
 \begin{document}
 
 \maketitle
@@ -99,7 +122,6 @@ Metodo grafico per rappresentare la distribuzione dei valori usando gli Outliers
 
 \subsection{Verifica del tipo di distribuzione col \emph{Chi Quadro test}}
 La funzione \emph{Chi Quadro test} ci restituice un valore utile per valutare la natura della curva. Infati se il suo valore supera 0.5 essa sicuramente non sarà Gaussiana. In questo caso specifico la curva può essere Gaussiana.
-
 
 \section{Caso 2}
 
