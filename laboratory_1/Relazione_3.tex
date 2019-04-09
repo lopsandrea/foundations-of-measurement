@@ -102,6 +102,8 @@ Di seguito sono riportati i calcoli relativi all'incertezza che verranno illustr
 
 \subsubsection{Tempo di salita con sonda non compensata}
 
+
+
 Per calcolare l'incertezza in questo caso si fa riferimento al valore \emph{cursor accuracy} presente nel datasheet dell'oscilloscopio (\emph{Figure 4}), riferito all'asse dei tempi:
 
 \begin{figure}[htp]
@@ -140,7 +142,10 @@ Per rendere più elegante la scrittura del risultato senza intaccarne la validit
   		{t_r}= 5.50\pm 0,04 \mu s
 	\end{equation}
 \end{Large}\\
+
+
 \subsubsection{Tempo di discesa con sonda non compensata}
+
 \begin{Large}
 	\begin{equation}
   		{t_f}= 5.70\mu s\pm (+ 0,00057\mu s + 0,04\mu s + 200ps)
@@ -154,13 +159,24 @@ Arrotondando:
   		{t_f}= 5.70\pm 0,04 \mu s
 	\end{equation}
 \end{Large}\\
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.25]{"fig2".jpg}
+	\caption{Tempo di discesa}
+	\label{}
+\end{figure}
 
 Una sonda compensata è composta da una resistenza elevata in parallelo ad un condensatore di capacità variabile (compensatore).
 
 Grazie a quest'ultima, è possibile annullare l'effetto di carico per segnali ad alte frequenze (più di 5 kHz) e di ampiezza sufficientemente alta rispetto al rumore.
 
 \subsubsection{Tempo di salita con sonda compensata 10x}
-
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.25]{"fig6".jpg}
+	\caption{Tempo di salita x10}
+	\label{}
+\end{figure}
 \begin{Large}
 	\begin{equation}
 		{t_{r_{10x}}}= 975ns \pm( + 0,0975ns + 10ns + 200ps)
@@ -192,7 +208,12 @@ Arrotondando:
 \end{Large}\\
 
 \subsubsection{Tempo di salita con sonda compensata 10x e inserzione di una resistenza}
-
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.25]{"fig7".jpg}
+	\caption{Tempo di salita x10 + resistenza }
+	\label{}
+\end{figure}
 \begin{Large}
 	\begin{equation}
 		{t_{r_{R_{10x}}}}= 1300ns \pm ( + 0,13ns + 10ns + 200ps)
@@ -208,15 +229,17 @@ Arrotondando:
 \end{Large}\\
 
 \subsubsection{Periodo segnale sinusoidale}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.20]{"fig8".jpg}
+	\caption{Segnale sinusoidale }
+	\label{}
+\end{figure}
 \begin{Large}
 	\begin{equation}
   		{T_s}= 1000\mu s\pm (+ 0.1 \mu s + 4 \mu s + 200ps)
 	\end{equation}
 \end{Large}\\
-\\
-\\
-\\
-
 Arrotondando: 
 
 \begin{Large}

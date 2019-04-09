@@ -57,7 +57,6 @@ Si utilizza il metodo a quattro morsetti poichè normalmente sorgerebbero dei pr
 morsetti-resistore ed alle resistenze dei collegamenti, che non sarebbero trascurabili rispetto alla resistenza incognita della barra di rame.
 
 \section {Incertezza su grandezze dimensionali}
-%TODO:  aggiungere commento @paolo 
 \subsection{Misure con centimetro estensibile}
 L'unica incertezza che interressa le misure effettuate con il centimetro è l'incertezza assoluta di lettura, ovvero il massimo errore che si commette nell'apprezzare una frazione di divisione
 
@@ -92,13 +91,26 @@ Si è calcolata l'incertezza delle relative misure:
 	 \end{equation}
 \end{Large}
 \subsection{Misure col calibro digitale}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.20]{"fig3".jpg}
+	\caption{Calibro digitale}
+	\label{}
+\end{figure}
 Per quanto riguarda invece le misure effettuate col calibro digitale si ha: 
 \begin{Large} 
 	\begin{equation}
 		U_{calibro} = 0.01 + |0.02| = 0.03mm
 	 \end{equation}
 \end{Large}
-Si è calcolata lincertezza delle relative misure: 
+Letto dalle specifiche del calibro
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.60]{"figpl".png}
+	\caption{Specifiche calibro}
+	\label{}
+\end{figure}
+\\Si è calcolata lincertezza delle relative misure: 
 \begin{Large} 
 	\begin{equation}
 		w = 30.08\pm0.03mm
@@ -177,21 +189,33 @@ Con risultato:
 
 \section {Incertezza su grandezze elettriche, metodo voltamperometrico}
 Per effettuate le misure seguenti sono stati adoperati: il multimetro da banco \emph{Agilent 34410} e il multimetro palmare \emph{U/U1253B}.
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.30]{"fig4".jpg}
+	\caption{Multimetro palmare}
+	\label{}
+\end{figure}
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.70]{"fig5".png}
+	\caption{Specifiche U/U1253B }
+	\label{}
+\end{figure}
 \subsection{Misura diretta della resistenza mediante due morsetti}
 Adoperando due morsetti si è arrivati alla misurazione della seguente resistenza:
 \begin{Large}
 	\begin{equation}
-		R_{X2W}= 0.189 \Omega
+		R_{X2W}= 33.4 m\Omega
 	\end{equation}
 	\begin{equation}
 		U_{R_{X2W}} = [\pm 0.01\%rdg \pm 0.004\% FSO]
 	 \end{equation}
 	 \begin{equation}
-		R_{X2W} = 0.189 \pm 0.004 \Omega
+		R_{X2W} = 33.4 \pm 4.3m \Omega
 	 \end{equation}
 \end{Large}
-Purtroppo però la misura è \emph{errata} a causa delle resistenze dei due puntali, infatti esse come tutta la cavetteria hanno una resistenza interna.
-Il problema è fortunatamnete di facile risoluzione, compensando i puntali stessi. Ed ecco che si ottiene una misurazione più precisa.
+Purtroppo però la misura è \emph{errata} a causa delle resistenze dei due puntali, che infatti sono dotati di resistenza interna di ordine di grandezza confrontabile con quello della misura stessa.
+Il problema è fortunatamnete di facile risoluzione, compensando i puntali stessi col multimetro. Ed ecco che si ottiene una misurazione più precisa.
 
 \begin{Large}
 	\begin{equation}
@@ -204,21 +228,28 @@ Il problema è fortunatamnete di facile risoluzione, compensando i puntali stess
 		R_{X2W_{2}} = 0.007 \pm 0.004 \Omega
 	 \end{equation}
 \end{Large}
-\subsection{Misura della resistenza mediante quanto morsetti}
-Quello che si è andato a misurare con quattro puntali è solamente la \emph{caduta di tensione} nel resistore; infatti il flusso di corrente misurato nei puntali è pressochè nullo.
+\subsection{Misura della resistenza mediante quattro morsetti}
+In realtà lo strumento non è idoneo ad effettuare misuredi piccole resistenze in quanto l'incertezza è confrontabile con la misura, 
+ciò che andremo a misurare è praticamente rumore nonostante si è usata la configurazione a 4 morsetti 
 \begin{Large}
 	\begin{equation}
-		R_{X4W}= 0.1909 \Omega
+		R_{X4W}= 2.9m \Omega
 	\end{equation}
 	\begin{equation}
 		U_{R_{X4W}} = [\pm 0.01\%rdg \pm 0.004\% FSO]
 	 \end{equation}
 	 \begin{equation}
-		R_{X4W} = 0.1909\pm 0.006 \Omega
+		R_{X4W} = 2.9\pm 4m \Omega
 	 \end{equation}
 \end{Large}
 \subsection{Misura di resistenza con il metodo amperometrico}
 Per ottenere la resistenza $R_{X_{VA}}$ si è andati a calcolare prima $I_{VA}$ e poi $V_{VA}$
+\begin{figure}[htp]
+	\centering
+	\includegraphics[scale=0.20]{"fig2".jpg}
+	\caption{Misurazione  con il metodo amperometrico}
+	\label{}
+\end{figure}
 \begin{Large}
 	\begin{equation}
 		I_{VA}= 4.9433 A
