@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{layout}
+
+\usepackage{listings}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=15mm,
+	top=15mm,
+}
+
+\title{\begin{center}
+		\setlength{\tabcolsep}{0pt}
+		\begin{tabular}{>{\raggedleft}m{3cm}>{\centering}m{\textwidth - 5cm\relax}>{\raggedright}m{3cm}}
+			\includegraphics[width=\linewidth]{poliba.png}%
+			&%
+			\textbf{ } \\[5pt]%
+			\textbf{\ }%
+			&%
+			\includegraphics[width=\linewidth]{dei.png} %
+		\end{tabular}
+	\end{center}
+	\textbf{Codice allegato\\}
+	\textbf{\large- Corso di Fondamenti delle Misurazione -\\ }
+	{\normalsize 
+		- Ingegneria Informatica e dell'Automazione -
+}}
+\author{A cura di:\\
+	Laura Loperfido\\
+	Andrea Lops \\
+	Teresa Pantone\\
+	Paolo Rotolo\\
+	\\
+	Prof. Ing. Filippo Attivissimo
+}
+\date{ }
+\begin{document}
+\maketitle
+\lstset{language=Matlab}
+\UseRawInputEncoding
+
+\lstinputlisting{main.m}
+\end{document}
